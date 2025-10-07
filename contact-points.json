@@ -4,7 +4,7 @@
     "contactPoints": [
       {
         "id": "TDO-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe im Landkreis Nordsachsen",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "Landratsamt Nordsachsen",
         "address": {
           "street": "Richard-Wagner-Straße 7a",
@@ -19,7 +19,7 @@
       },
       {
         "id": "TDO-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe im Landkreis Nordsachsen, Außenstelle Torgau",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Torgau",
         "carrier": "Landratsamt Nordsachsen",
         "address": {
           "street": "Südring 17",
@@ -38,7 +38,7 @@
     "fullName": "Leipzig",
     "contactPoints": [
       {
-        "id": "L-002",
+        "id": "L-001",
         "name": "Selbsthilfekontakt- und Informationsstelle Leipzig",
         "carrier": "Stadt Leipzig, Gesundheitsamt",
         "address": {
@@ -59,19 +59,48 @@
     "fullName": "Leipzig (Landkreis)",
     "contactPoints": [
       {
+        "id": "L-Land-001",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "carrier": "Diakonie Leipziger Land",
+        "address": {
+          "street": "Nicolaiplatz 5",
+          "postalCode": "04668",
+          "city": "Grimma"
+        },
+        "contact": {
+          "phone": "+49 3437 701622",
+          "email": "kiss@diakonie-leipziger-land.de",
+          "web": "https://www.selbsthilfe-ehrenamt.de/"
+        }
+      },
+      {
         "id": "L-Land-002",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Wurzen",
         "carrier": "Diakonie Leipziger Land",
         "address": {
-          "street": "Gustav-Mahler-Straße 3, Hochparterre",
-          "postalCode": "04109",
-          "city": "Leipzig"
+          "street": "Bahnhofsstaße 22",
+          "postalCode": "04808",
+          "city": "Wurzen"
         },
         "contact": {
-          "phone": "+49 341 1236755",
-          "mobile": "+49 171 2345678",
-          "email": "selbsthilfe@leipzig.de",
-          "web": "https://www.leipzig.de/selbsthilfe"
+          "phone": "+49 3425 9182762",
+          "email": "kiss@diakonie-leipziger-land.de",
+          "web": "https://www.selbsthilfe-ehrenamt.de/"
+        }
+      },
+      {
+        "id": "L-Land-003",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Borna",
+        "carrier": "Diakonie Leipziger Land",
+        "address": {
+          "street": "Leipziger Straße 79",
+          "postalCode": "04552",
+          "city": "Borna"
+        },
+        "contact": {
+          "phone": "+49 3433 274040",
+          "email": "kiss@diakonie-leipziger-land.de",
+          "web": "https://www.selbsthilfe-ehrenamt.de/"
         }
       }
     ]
