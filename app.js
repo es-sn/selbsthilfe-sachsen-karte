@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
           };
 
           setText('.name', point.name);
-          setText('.carrier', `Träger: ${point.carrier}`);
-          setText('.address', `Adresse: ${point.address.street}, ${point.address.postalCode} ${point.address.city}`);
+          setText('.carrier', `${point.carrier}`);
+          setText('.address', `${point.address.street}, ${point.address.postalCode} ${point.address.city}`);
           setLink('.phone', point.contact.phone, 'tel:');
           setLink('.mobile', point.contact.mobile, 'tel:');
           setLink('.email', point.contact.email, 'mailto:');
