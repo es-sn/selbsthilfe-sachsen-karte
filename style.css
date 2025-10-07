@@ -4,15 +4,48 @@
     --background-color: #fff;
     --text-color: #000;
     --grey-text-color: #373737;
-    --font-family: 'Arial', sans-serif;
+    --font-family: 'Inter', sans-serif;
 }
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/assets/fonts/inter-v19-latin-regular.woff2') format('woff2');
+}
 
-body, html {
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/assets/fonts/inter-v19-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/assets/fonts/inter-v19-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/assets/fonts/inter-v19-latin-700.woff2') format('woff2');
+}
+
+html,
+body {
     margin: 0;
-    padding: 0;
+    width: 100%;
     height: 100%;
-    background-color: var(--background-color);
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
 }
 
 p, a, h1, h2, h3, h4, h5, h6 {
@@ -27,7 +60,7 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
-main{
+main {
     padding: 20px;
     box-sizing: border-box;
     min-height: 100vh;
@@ -55,7 +88,7 @@ main h1, main p {
 }
 
 #contact-points > p {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #map-container {
@@ -73,26 +106,26 @@ main h1, main p {
 }
 
 #filter-bar {
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 #filter-bar button {
-  padding: 8px 12px;
-  border: 1px solid var(--primary-color);
-  background-color: #fff;
-  color: var(--text-color);
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.2s, color 0.2s;
+    padding: 8px 12px;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #filter-bar button:hover,
 #filter-bar button.active {
-  background-color: var(--primary-color);
-  color: #fff;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .contact-point {
@@ -104,23 +137,27 @@ main h1, main p {
 }
 
 .contact-point h4.name {
-    color: var(--primary-color);
     font-size: 1.1em;
     padding-bottom: 2px;
 }
 
-p.carrier{
-    font-style: italic;
+p.carrier {
     color: var(--grey-text-color);
+    margin-bottom: 0.75rem;
 }
 
-.contact-point p {
-    margin-bottom: 5px;
-    line-height: 1.5;
+.contact-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3px 1rem;
+
+    line-height: 1.2;
     font-size: 0.9em;
+    margin: 0.25rem;
+    margin-bottom: 0.75rem;
 }
 
-.contact-point p strong {
+.contact-point .contact-grid strong {
     color: var(--primary-color);
 }
 
@@ -145,21 +182,21 @@ p.carrier{
 }
 
 #load-more {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid var(--primary-color);
-  background-color: #fff;
-  color: var(--primary-color);
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.2s, color 0.2s;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #load-more:hover {
-  background-color: var(--primary-color);
-  color: #fff;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 
@@ -168,6 +205,7 @@ p.carrier{
         height: auto;
         overflow: auto;
     }
+
     .content-wrapper {
         flex-direction: column;
         height: auto;
@@ -182,12 +220,12 @@ p.carrier{
 }
 
 @media (min-width: 979px) {
-  #map-container {
-    position: sticky;
-    top: 20px;
-    align-self: flex-start;
-    height: calc(100vh - 40px);
-  }
+    #map-container {
+        position: sticky;
+        top: 20px;
+        align-self: flex-start;
+        height: calc(100vh - 40px);
+    }
 }
 
 @media (max-width: 980px) {
@@ -195,7 +233,30 @@ p.carrier{
         display: none;
     }
 
-    #contact-points{
+    #contact-points {
         height: auto;
     }
+}
+
+.social-links-container {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 5px;
+}
+
+.social-links-container a {
+    background-color: var(--primary-color);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.social-links-container a{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+}
+
+.social-links-container a img {
+    width: 100%;
+    hight: 100%;
 }

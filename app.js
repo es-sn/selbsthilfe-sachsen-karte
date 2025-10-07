@@ -165,20 +165,31 @@ document.addEventListener('DOMContentLoaded', () => {
           setLink('.phone', point.contact.phone, 'tel:');
           setLink('.mobile', point.contact.mobile, 'tel:');
           setLink('.email', point.contact.email, 'mailto:');
-          setLink('.web', point.contact.web);
-
-          const socialContainer = clone.querySelector('.social');
-          const socialLinks = [];
-          if (point.social) {
-            if (point.social.facebook) socialLinks.push(`<a href="${point.social.facebook}" target="_blank">Facebook</a>`);
-            if (point.social.twitter) socialLinks.push(`<a href="${point.social.twitter}" target="_blank">Twitter</a>`);
-            if (point.social.instagram) socialLinks.push(`<a href="${point.social.instagram}" target="_blank">Instagram</a>`);
+          const webContainer = clone.querySelector('.social-link-website');
+          if (webContainer) {
+            if (point.contact.web) {
+              webContainer.innerHTML = `<a href="${point.contact.web}" target="_blank"><img src="assets/icons/Globe48x28.svg" alt="Website"></a>`;
+            } else {
+              webContainer.style.display = 'none';
+            }
           }
 
-          if (socialLinks.length > 0) {
-            socialContainer.innerHTML = socialLinks.join(' | ');
-          } else if (socialContainer) {
-            socialContainer.style.display = 'none';
+          const facebookContainer = clone.querySelector('.social-link-facebook');
+          if (facebookContainer) {
+            if (point.social && point.social.facebook) {
+              facebookContainer.innerHTML = `<a href="${point.social.facebook}" target="_blank"><img src="assets/icons/Facebook48x28.svg" alt="Facebook"></a>`;
+            } else {
+              facebookContainer.style.display = 'none';
+            }
+          }
+
+          const instagramContainer = clone.querySelector('.social-link-instagram');
+          if (instagramContainer) {
+            if (point.social && point.social.instagram) {
+              instagramContainer.innerHTML = `<a href="${point.social.instagram}" target="_blank"><img src="assets/icons/Instagram48x28.svg" alt="Instagram"></a>`;
+            } else {
+              instagramContainer.style.display = 'none';
+            }
           }
 
           contactList.appendChild(clone);
