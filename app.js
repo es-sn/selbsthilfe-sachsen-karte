@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const contactPointsContainer = document.getElementById('contact-points');
+  const contactList = document.getElementById('contact-list');
   const template = document.getElementById('contact-point-template');
   const sachsenMapObject = document.getElementById('sachsen-map');
   const filterBar = document.getElementById('filter-bar');
 
   let allData = {};
   let activeCountyPath = null;
+  let loadMoreButton = null;
 
   /**
    * Highlights the selected county on the SVG map.
@@ -40,6 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const handleLoadMore = () => {
+    const allContactPoints = document.querySelectorAll('.contact-point');
+    const hiddenPoints = Array.from(allContactPoints).filter(p => p.style.display === 'none');
+    
+    for (let i = 0; i < 3 && i < hiddenPoints.length; i++) {
+      hiddenPoints[i].style.display = 'block';
+    }
+
+    if (hiddenPoints.length <= 3) {
+      loadMoreButton.style.display = 'none';
+    }
+  };
+
   /**
    * Filters the contact points list based on the selected county.
    * It also triggers updates for the map and filter buttons.
@@ -49,13 +64,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const allCountyHeadlines = document.querySelectorAll('#contact-points h3');
     const allContactPoints = document.querySelectorAll('.contact-point');
 
-    allCountyHeadlines.forEach(headline => {
-      headline.style.display = (countyId === 'all' || headline.dataset.county === countyId) ? 'block' : 'none';
-    });
+    if (!loadMoreButton) {
+      loadMoreButton = document.createElement('button');
+      loadMoreButton.textContent = 'Mehr laden';
+      loadMoreButton.id = 'load-more';
+      loadMoreButton.addEventListener('click', handleLoadMore);
+      contactPointsContainer.appendChild(loadMoreButton);
+    }
+    
+    loadMoreButton.style.display = 'none';
 
-    allContactPoints.forEach(point => {
-      point.style.display = (countyId === 'all' || point.dataset.county === countyId) ? 'block' : 'none';
-    });
+    if (countyId === 'all') {
+      allCountyHeadlines.forEach(headline => headline.style.display = 'block');
+      
+      allContactPoints.forEach((point, index) => {
+        point.style.display = index < 5 ? 'block' : 'none';
+      });
+
+      if (allContactPoints.length > 5) {
+        loadMoreButton.style.display = 'block';
+      }
+    } else {
+      allCountyHeadlines.forEach(headline => {
+        headline.style.display = (headline.dataset.county === countyId) ? 'block' : 'none';
+      });
+      allContactPoints.forEach(point => {
+        point.style.display = (point.dataset.county === countyId) ? 'block' : 'none';
+      });
+    }
 
     updateActiveFilterButton(countyId);
     updateActiveMapCounty(countyId);
@@ -87,8 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * It groups contact points by county.
    */
   const renderContactPoints = () => {
-    contactPointsContainer.innerHTML = '<h2>Kontaktstellen</h2>';
-    contactPointsContainer.appendChild(filterBar);
+    contactList.innerHTML = '';
 
     for (const countyKey in allData) {
       const county = allData[countyKey];
@@ -96,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const countyName = document.createElement('h3');
         countyName.textContent = county.fullName;
         countyName.dataset.county = countyKey;
-        contactPointsContainer.appendChild(countyName);
+        contactList.appendChild(countyName);
 
         county.contactPoints.forEach(point => {
           const clone = template.content.cloneNode(true);
@@ -146,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
             socialContainer.style.display = 'none';
           }
 
-          contactPointsContainer.appendChild(clone);
+          contactList.appendChild(clone);
         });
       }
     }

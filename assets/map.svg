@@ -5,9 +5,8 @@
       :root {
       --primary-color: #42368b;
       --secondary-color: #e8404b;
-      --background-color: #fff;
+      --hover-color: rgba(232, 64, 75, 0.5);
       --text-color: #000;
-      --font-family: 'Arial', sans-serif;
       }
        
       .outline {
@@ -32,7 +31,9 @@
       transition: fill 0.2s ease-in-out;
       }
 
-      #counties path:hover,
+      #counties path:hover{
+        fill: var(--hover-color);
+      }
       #counties path.active {
         fill: var(--secondary-color);
       }

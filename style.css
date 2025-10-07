@@ -53,6 +53,10 @@ main h1, main p {
     box-sizing: border-box;
 }
 
+#contact-points > p {
+  margin-bottom: 20px;
+}
+
 #map-container {
     width: 67%;
     display: flex;
@@ -108,11 +112,73 @@ main h1, main p {
     }
 }
 
-.contact-point{
+.contact-point {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 10px;
-    
+    margin-bottom: 10px;
 }
-.contact-point h4{
+
+.contact-point h4.name {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-point p {
     margin-bottom: 5px;
-    
+    line-height: 1.5;
+    font-size: 0.9em;
+}
+
+.contact-point p strong {
+    color: #333;
+}
+
+.contact-point a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-point a:hover,
+.contact-point a:focus {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.contact-point .social a {
+    margin-right: 10px;
+}
+
+.contact-point .social a:last-child {
+    margin-right: 0;
+}
+
+#load-more {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid var(--primary-color);
+  background-color: #fff;
+  color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#load-more:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+@media (min-width: 769px) {
+  #map-container {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    height: calc(100vh - 40px);
+  }
 }
