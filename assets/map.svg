@@ -24,6 +24,7 @@
 
       .dot {
         fill: var(--primary-color);
+        pointer-events: none;
       }
 
       #counties path {
@@ -31,8 +32,9 @@
       transition: fill 0.2s ease-in-out;
       }
 
-      #counties path:hover {
-      fill: var(--secondary-color);
+      #counties path:hover,
+      #counties path.active {
+        fill: var(--secondary-color);
       }
     </style>
   </defs>

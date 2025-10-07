@@ -5,15 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBar = document.getElementById('filter-bar');
 
   let allData = {};
+  let activeCountyPath = null;
 
-  const updateActiveFilter = (countyId) => {
+  const updateActiveMapCounty = (countyId) => {
+    const svgDoc = sachsenMapObject.contentDocument;
+    if (!svgDoc) return;
+
+    if (activeCountyPath) {
+      activeCountyPath.classList.remove('active');
+      activeCountyPath = null;
+    }
+
+    if (countyId !== 'all') {
+      const countyPath = svgDoc.getElementById(countyId);
+      if (countyPath) {
+        countyPath.classList.add('active');
+        activeCountyPath = countyPath;
+      }
+    }
+  };
+
+  const updateActiveFilterButton = (countyId) => {
     const buttons = filterBar.querySelectorAll('button');
     buttons.forEach(button => {
-      if (button.dataset.county === countyId) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
+      button.classList.toggle('active', button.dataset.county === countyId);
     });
   };
 
@@ -28,7 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     allContactPoints.forEach(point => {
       point.style.display = (countyId === 'all' || point.dataset.county === countyId) ? 'block' : 'none';
     });
-    updateActiveFilter(countyId);
+
+    updateActiveFilterButton(countyId);
+    updateActiveMapCounty(countyId);
   };
 
   const createFilterBar = () => {
@@ -116,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
       allData = data;
       renderContactPoints();
       createFilterBar();
+      filterContactPoints('all');
     })
     .catch(error => console.error('Error fetching contact points:', error));
 
@@ -126,7 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
     counties.forEach(county => {
       county.addEventListener('click', (event) => {
         const countyId = event.currentTarget.id;
-        filterContactPoints(countyId);
+        if (activeCountyPath && activeCountyPath.id === countyId) {
+          filterContactPoints('all');
+        } else {
+          filterContactPoints(countyId);
+        }
       });
     });
 
