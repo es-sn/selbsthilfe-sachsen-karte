@@ -4,14 +4,13 @@
     <style>
       :root {
       --primary-color: #007a33;
-      --secondary-color: #e8404b;
-      --hover-color: rgba(232, 64, 75, 0.5);
-      --text-color: #000;
+      --secondary-color: #01471d;
+      --hover-color: rgba(0, 122, 51, 0.5);
       }
        
       .outline {
         fill: none;
-        stroke: var(--text-color);
+        stroke: var(--primary-color);
         stroke-width: 1.51px;
       }
 
@@ -22,7 +21,7 @@
       }
 
       .dot {
-        fill: var(--primary-color);
+        fill: var(--secondary-color);
         pointer-events: none;
       }
 
@@ -35,7 +34,7 @@
         fill: var(--hover-color);
       }
       #counties path.active {
-        fill: var(--secondary-color);
+        fill: var(--primary-color);
       }
     </style>
   </defs>

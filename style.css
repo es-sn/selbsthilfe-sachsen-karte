@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     --primary-color: #007a33;
-    --secondary-color: #e8404b;
+    --secondary-color: #01471d;
     --background-color: #fff;
     --text-color: #000;
     --grey-text-color: #373737;
@@ -212,6 +212,10 @@ p.carrier {
     border-radius: 0.5rem;
 }
 
+.social-links-container a:hover {
+    background-color: var(--secondary-color);
+}
+
 .social-links-container a {
     width: 1.5rem;
     height: 1.5rem;
@@ -237,7 +241,7 @@ p.carrier {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     background-color: #fff;
     color: var(--primary-color);
     cursor: pointer;
