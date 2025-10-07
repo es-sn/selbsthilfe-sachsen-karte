@@ -1,0 +1,36 @@
+{
+  "TDO": [],
+  "L": [],
+  "L-Land": [],
+  "MEI": [],
+  "BZ": [],
+  "GR": [],
+  "DD": [
+    {
+      "name": "Selbsthilfekontaktstelle Dresden",
+      "carrier": "Träger name",
+      "address": {
+        "street": "Hauptstraße 1",
+        "postalCode": "01067",
+        "city": "Dresden"
+      },
+      "contact": {
+        "phone": "+49 351 1234567",
+        "mobile": "+49 171 2345678",
+        "email": "info@selbsthilfe.de",
+        "web": "https://www.selbsthilfe.de"
+      },
+      "social": {
+        "facebook": "https://www.facebook.com/selbsthilfe",
+        "twitter": "https://twitter.com/selbsthilfe",
+        "instagram": "https://www.instagram.com/selbsthilfe"
+      }
+    }
+   ],
+  "PIR": [],
+  "FG": [],
+  "C": [],
+  "Z": [],
+  "ERZ": [],
+  "V": []
+}
