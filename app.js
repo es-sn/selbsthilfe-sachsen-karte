@@ -137,10 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Error fetching contact points:', error));
 
+  sachsenMapObject.addEventListener('dragstart', (e) => e.preventDefault());
+
   sachsenMapObject.addEventListener('load', () => {
     const svgDoc = sachsenMapObject.contentDocument;
-    const counties = svgDoc.querySelectorAll('#counties path');
+    if (!svgDoc) return;
 
+    svgDoc.addEventListener('mousedown', (e) => e.preventDefault());
+    svgDoc.addEventListener('dragstart', (e) => e.preventDefault());
+
+    const counties = svgDoc.querySelectorAll('#counties path');
     counties.forEach(county => {
       county.addEventListener('click', (event) => {
         const countyId = event.currentTarget.id;
