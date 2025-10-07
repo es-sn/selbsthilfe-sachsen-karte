@@ -153,20 +153,60 @@ document.addEventListener('DOMContentLoaded', () => {
                   link.textContent = href;
                 }
               } else {
-                link.parentElement.style.display = 'none';
+                const labelNode = link.previousSibling;
+                if (labelNode && labelNode.nodeType === Node.TEXT_NODE) {
+                    labelNode.textContent = '';
+                }
+                link.style.display = 'none';
               }
             }
           };
 
+          // ID and Name are required.
           setText('.name', point.name);
-          setText('.carrier', `${point.carrier}`);
-          setText('.address', `${point.address.street}, ${point.address.postalCode} ${point.address.city}`);
-          setLink('.phone', point.contact.phone, 'tel:');
-          setLink('.mobile', point.contact.mobile, 'tel:');
-          setLink('.email', point.contact.email, 'mailto:');
+
+          // Carrier is optional.
+          if (point.carrier) {
+            setText('.carrier', point.carrier);
+          } else {
+            const carrierEl = clone.querySelector('.carrier');
+            if (carrierEl) carrierEl.style.display = 'none';
+          }
+
+          // Address is optional.
+          const addressEl = clone.querySelector('.address');
+          if (point.address && addressEl) {
+            const parts = [
+                point.address.street,
+                `${point.address.postalCode || ''} ${point.address.city || ''}`.trim()
+            ].filter(Boolean);
+            
+            if (parts.length > 0) {
+                setText('.address', parts.join(', '));
+            } else {
+                const labelNode = addressEl.previousSibling;
+                if (labelNode && labelNode.nodeType === Node.TEXT_NODE) {
+                    labelNode.textContent = '';
+                }
+                addressEl.style.display = 'none';
+            }
+          } else if (addressEl) {
+            const labelNode = addressEl.previousSibling;
+            if (labelNode && labelNode.nodeType === Node.TEXT_NODE) {
+                labelNode.textContent = '';
+            }
+            addressEl.style.display = 'none';
+          }
+
+          // Contact links are optional.
+          setLink('.phone', point.contact && point.contact.phone, 'tel:');
+          setLink('.mobile', point.contact && point.contact.mobile, 'tel:');
+          setLink('.email', point.contact && point.contact.email, 'mailto:');
+
+          // Social links are optional.
           const webContainer = clone.querySelector('.social-link-website');
           if (webContainer) {
-            if (point.contact.web) {
+            if (point.contact && point.contact.web) {
               webContainer.innerHTML = `<a href="${point.contact.web}" target="_blank"><img src="assets/icons/Globe48x28.svg" alt="Website"></a>`;
             } else {
               webContainer.style.display = 'none';
