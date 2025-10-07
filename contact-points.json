@@ -1,15 +1,80 @@
 {
   "TDO": {
     "fullName": "Nordsachsen",
-    "contactPoints": []
+    "contactPoints": [
+      {
+        "id": "TDO-001",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe im Landkreis Nordsachsen",
+        "carrier": "Landratsamt Nordsachsen",
+        "address": {
+          "street": "Richard-Wagner-Straße 7a",
+          "postalCode": "04509",
+          "city": "Delitzsch"
+        },
+        "contact": {
+          "phone": "+49 3421 7586321",
+          "email": "kiss@lra-nordsachsen.de",
+          "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
+        }
+      },
+      {
+        "id": "TDO-002",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe im Landkreis Nordsachsen, Außenstelle Torgau",
+        "carrier": "Landratsamt Nordsachsen",
+        "address": {
+          "street": "Südring 17",
+          "postalCode": "04860",
+          "city": "Torgau"
+        },
+        "contact": {
+          "phone": "+49 3421 7586357",
+          "email": "kiss@lra-nordsachsen.de",
+          "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
+        }
+      }
+    ]
   },
   "L": {
     "fullName": "Leipzig",
-    "contactPoints": []
+    "contactPoints": [
+      {
+        "id": "L-002",
+        "name": "Selbsthilfekontakt- und Informationsstelle Leipzig",
+        "carrier": "Stadt Leipzig, Gesundheitsamt",
+        "address": {
+          "street": "Gustav-Mahler-Straße 3, Hochparterre",
+          "postalCode": "04109",
+          "city": "Leipzig"
+        },
+        "contact": {
+          "phone": "+49 341 1236755",
+          "mobile": "+49 171 2345678",
+          "email": "selbsthilfe@leipzig.de",
+          "web": "https://www.leipzig.de/selbsthilfe"
+        }
+      }
+    ]
   },
   "L-Land": {
     "fullName": "Leipzig (Landkreis)",
-    "contactPoints": []
+    "contactPoints": [
+      {
+        "id": "L-Land-002",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Wurzen",
+        "carrier": "Diakonie Leipziger Land",
+        "address": {
+          "street": "Gustav-Mahler-Straße 3, Hochparterre",
+          "postalCode": "04109",
+          "city": "Leipzig"
+        },
+        "contact": {
+          "phone": "+49 341 1236755",
+          "mobile": "+49 171 2345678",
+          "email": "selbsthilfe@leipzig.de",
+          "web": "https://www.leipzig.de/selbsthilfe"
+        }
+      }
+    ]
   },
   "MEI": {
     "fullName": "Meißen",
