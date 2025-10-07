@@ -112,8 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const link = clone.querySelector(selector);
             if (link) {
               if (href) {
-                link.href = `${protocol}${href}`;
-                link.textContent = href;
+                link.href = protocol ? `${protocol}${href}` : href;
+                if (selector === '.web') {
+                  link.textContent = href.replace(/^(https?|ftp):\/\//, '').replace(/^(www\.)?/, '');
+                } else {
+                  link.textContent = href;
+                }
               } else {
                 link.parentElement.style.display = 'none';
               }
@@ -126,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
           setLink('.phone', point.contact.phone, 'tel:');
           setLink('.mobile', point.contact.mobile, 'tel:');
           setLink('.email', point.contact.email, 'mailto:');
-          setLink('.web', point.contact.web, 'https://');
+          setLink('.web', point.contact.web);
 
           const socialContainer = clone.querySelector('.social');
           const socialLinks = [];
