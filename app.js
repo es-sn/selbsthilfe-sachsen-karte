@@ -246,6 +246,58 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
 
+          // Copy button functionality
+          const copyButton = clone.querySelector('.copy-button');
+          if (copyButton) {
+            copyButton.addEventListener('click', () => {
+              const parts = [];
+              parts.push(`Name: ${point.name}`);
+              if (point.carrier) parts.push(`Träger: ${point.carrier}`);
+              
+              if (point.address) {
+                const addressParts = [
+                    point.address.street,
+                    `${point.address.postalCode || ''} ${point.address.city || ''}`.trim()
+                ].filter(Boolean);
+                if (addressParts.length > 0) {
+                    parts.push(`Adresse: ${addressParts.join(', ')}`);
+                }
+              }
+
+              if (point.contact) {
+                if (point.contact.phone) parts.push(`Telefon: ${point.contact.phone}`);
+                if (point.contact.mobile) parts.push(`Mobil: ${point.contact.mobile}`);
+                if (point.contact.email) parts.push(`Email: ${point.contact.email}`);
+                if (point.contact.web) parts.push(`Web: ${point.contact.web}`);
+              }
+
+              if (point.social) {
+                  if (point.social.facebook) parts.push(`Facebook: ${point.social.facebook}`);
+                  if (point.social.instagram) parts.push(`Instagram: ${point.social.instagram}`);
+              }
+
+              const textToCopy = parts.join('\n');
+
+              navigator.clipboard.writeText(textToCopy).then(() => {
+                const icon = copyButton.querySelector('img');
+                if (!icon) return;
+
+                const originalIconSrc = 'assets/icons/Clipboard32x32.svg';
+                const checkIconSrc = 'assets/icons/ClipboardCheck32x32.svg';
+
+                icon.src = checkIconSrc;
+                copyButton.classList.add('copied');
+
+                setTimeout(() => {
+                  icon.src = originalIconSrc;
+                  copyButton.classList.remove('copied');
+                }, 1000);
+              }).catch(err => {
+                console.error('Failed to copy text: ', err);
+              });
+            });
+          }
+
           contactList.appendChild(clone);
         });
       }
