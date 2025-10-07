@@ -43,11 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const handleLoadMore = () => {
-    const allContactPoints = document.querySelectorAll('.contact-point');
-    const hiddenPoints = Array.from(allContactPoints).filter(p => p.style.display === 'none');
+    const hiddenPoints = document.querySelectorAll('.contact-point.hidden');
     
     for (let i = 0; i < 3 && i < hiddenPoints.length; i++) {
-      hiddenPoints[i].style.display = 'block';
+      hiddenPoints[i].classList.remove('hidden');
     }
 
     if (hiddenPoints.length <= 3) {
@@ -75,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMoreButton.style.display = 'none';
 
     if (countyId === 'all') {
-      allCountyHeadlines.forEach(headline => headline.style.display = 'block');
+      allCountyHeadlines.forEach(headline => headline.classList.remove('hidden'));
       
       allContactPoints.forEach((point, index) => {
-        point.style.display = index < 5 ? 'block' : 'none';
+        point.classList.toggle('hidden', index >= 5);
       });
 
       if (allContactPoints.length > 5) {
@@ -86,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } else {
       allCountyHeadlines.forEach(headline => {
-        headline.style.display = (headline.dataset.county === countyId) ? 'block' : 'none';
+        headline.classList.toggle('hidden', headline.dataset.county !== countyId);
       });
       allContactPoints.forEach(point => {
-        point.style.display = (point.dataset.county === countyId) ? 'block' : 'none';
+        point.classList.toggle('hidden', point.dataset.county !== countyId);
       });
     }
 

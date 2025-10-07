@@ -3,7 +3,7 @@
   <defs>
     <style>
       :root {
-      --primary-color: #42368b;
+      --primary-color: #007a33;
       --secondary-color: #e8404b;
       --hover-color: rgba(232, 64, 75, 0.5);
       --text-color: #000;

@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Selbsthilfe-Sachsen-Karte</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Interaktive Karte der Selbsthilfekontaktstellen in Sachsen. Finden Sie Anlaufstellen in Ihrer Region.">
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="app.js" as="script">
-  <link rel="preload" href="contact-points.json" as="fetch" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Selbsthilfe-Sachsen-Karte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Interaktive Karte der Selbsthilfekontaktstellen in Sachsen. Finden Sie Anlaufstellen in Ihrer Region.">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="app.js" as="script">
+    <link rel="preload" href="contact-points.json" as="fetch" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
 
-  <div class="content-wrapper">
-    <div id="contact-points">
-      <h1>Selbsthilfekontaktstellen Sachsen</h1>
-      <p>Interaktive Karte der Selbsthilfegruppen in Sachsen</p>
-      <div id="filter-bar"></div>
-      <div id="contact-list"></div>
-      <!-- The contact points will be loaded here -->
+    <div class="content-wrapper">
+        <div id="contact-points">
+            <h1>Selbsthilfekontaktstellen Sachsen</h1>
+            <p>Interaktive Karte der Selbsthilfegruppen in Sachsen</p>
+            <div id="filter-bar"></div>
+            <div id="contact-list"></div>
+            <!-- The contact points will be loaded here -->
+        </div>
+        <div id="map-container">
+            <object type="image/svg+xml" data="assets/map.svg" id="sachsen-map" draggable="false">
+                Karte von Sachsen, die die Standorte von Selbsthilfekontaktstellen zeigt.
+            </object>
+        </div>
     </div>
-    <div id="map-container">
-      <object type="image/svg+xml" data="assets/map.svg" id="sachsen-map" draggable="false">
-        Karte von Sachsen, die die Standorte von Selbsthilfekontaktstellen zeigt.
-      </object>
-    </div>
-  </div>
 </main>
 
 <template id="contact-point-template">
@@ -35,9 +36,9 @@
         <p class="carrier"></p>
         <div class="contact-grid">
             Adresse: <span class="address"></span>
-            E-Mail: <a class="email"></a>
-            Telefon: <a class="phone"></a>
-            Mobil: <a class="mobile"></a>
+            Telefon: <a class="phone" target="_blank"></a>
+            Mobil: <a class="mobile" target="_blank"></a>
+            Email: <a class="email" target="_blank"></a>
         </div>
         <div class="social-links-container">
             <div class="social-link-website"></div>

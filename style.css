@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Base Styles & Variables
+   ========================================================================== */
 :root {
     --primary-color: #007a33;
     --secondary-color: #e8404b;
@@ -7,6 +10,9 @@
     --font-family: 'Inter', sans-serif;
 }
 
+/* ==========================================================================
+   Font Definitions
+   ========================================================================== */
 @font-face {
     font-family: 'Inter';
     font-style: normal;
@@ -39,6 +45,9 @@
     src: url('/assets/fonts/inter-v19-latin-700.woff2') format('woff2');
 }
 
+/* ==========================================================================
+   Global Element & Utility Styles
+   ========================================================================== */
 html,
 body {
     margin: 0;
@@ -55,11 +64,22 @@ p, a, h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
 }
 
+h3 {
+    margin: 0.5rem 0;
+}
+
 a:hover, a:focus {
     color: var(--secondary-color);
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+
+/* ==========================================================================
+   Main Layout
+   ========================================================================== */
 main {
     padding: 20px;
     box-sizing: border-box;
@@ -80,6 +100,9 @@ main h1, main p {
     min-height: 0;
 }
 
+/* ==========================================================================
+   Contact Points Column (#contact-points)
+   ========================================================================== */
 #contact-points {
     width: 33%;
     overflow-y: auto;
@@ -91,20 +114,7 @@ main h1, main p {
     margin-bottom: 20px;
 }
 
-#map-container {
-    width: 67%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#sachsen-map {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-    user-select: none;
-}
-
+/* Filter Bar */
 #filter-bar {
     margin-bottom: 20px;
     display: flex;
@@ -128,6 +138,7 @@ main h1, main p {
     color: #fff;
 }
 
+/* Contact List Items */
 .contact-point {
     background-color: #fff;
     border: 2px solid var(--primary-color);
@@ -173,6 +184,30 @@ p.carrier {
     text-decoration: underline;
 }
 
+/* Social Links */
+.social-links-container {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 5px;
+}
+
+.social-links-container a {
+    background-color: var(--primary-color);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.social-links-container a {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+}
+
+.social-links-container a img {
+    width: 100%;
+    hight: 100%;
+}
+
 .contact-point .social a {
     margin-right: 10px;
 }
@@ -181,6 +216,7 @@ p.carrier {
     margin-right: 0;
 }
 
+/* Load More Button */
 #load-more {
     display: block;
     width: 100%;
@@ -199,7 +235,26 @@ p.carrier {
     color: #fff;
 }
 
+/* ==========================================================================
+   Map Column (#map-container)
+   ========================================================================== */
+#map-container {
+    width: 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#sachsen-map {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    user-select: none;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 @media (max-width: 978px) {
     main {
         height: auto;
@@ -236,27 +291,4 @@ p.carrier {
     #contact-points {
         height: auto;
     }
-}
-
-.social-links-container {
-    display: flex;
-    gap: 0.25rem;
-    margin-top: 5px;
-}
-
-.social-links-container a {
-    background-color: var(--primary-color);
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-}
-
-.social-links-container a{
-    width: 1.5rem;
-    height: 1.5rem;
-    display: inline-block;
-}
-
-.social-links-container a img {
-    width: 100%;
-    hight: 100%;
 }
