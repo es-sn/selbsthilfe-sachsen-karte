@@ -13,25 +13,27 @@
   <div class="content-wrapper">
     <div id="contact-points">
       <h2>Kontaktstellen</h2>
-      <div class="contact-point">
-          <h3>Selbsthilfekontaktstelle Dresden</h3>
-          <h4>Träger name</h4>
-          <p>Adresse: Hauptstraße 1, 01067 Dresden</p>
-          <p>Telefon: 0351 1234567</p>
-          <p>Mobil: 0171 2345678</p>
-          <p>Email: <a href="mailto"> info@selbsthilfe.de</a></p>
-          <p>Web: <a href="http://www.selbsthilfe.de" target="_blank">www.selbsthilfe.de</a></p>
-          <social>
-              <a href="https://www.facebook.com/selbsthilfe" target="_blank">Facebook</a> |
-              <a href="https://twitter.com/selbsthilfe" target="_blank">Twitter</a> |
-              <a href="https://www.instagram.com/selbsthilfe" target="_blank">Instagram</a>
-          </social>
-      </div>
+      <!-- The contact points will be loaded here -->
     </div>
     <div id="map-container">
       <object type="image/svg+xml" data="assets/map.svg" id="sachsen-map"></object>
     </div>
   </div>
 </main>
+
+<template id="contact-point-template">
+    <div class="contact-point">
+        <h4 class="name"></h4>
+        <p class="carrier"></p>
+        <p class="address"></p>
+        <p class="phone-container"><strong>Telefon:</strong> <a class="phone"></a></p>
+        <p class="mobile-container"><strong>Mobil:</strong> <a class="mobile"></a></p>
+        <p class="email-container"><strong>Email:</strong> <a class="email"></a></p>
+        <p class="web-container"><strong>Web:</strong> <a class="web" target="_blank"></a></p>
+        <social class="social"></social>
+    </div>
+</template>
+
+<script src="app.js"></script>
 </body>
 </html>

@@ -84,3 +84,12 @@ main h1, main p {
         padding-right: 0;
     }
 }
+
+.contact-point{
+    padding: 10px;
+    
+}
+.contact-point h4{
+    margin-bottom: 5px;
+    
+}
