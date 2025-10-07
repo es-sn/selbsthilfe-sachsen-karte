@@ -42,12 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const updateHeadlineVisibility = () => {
+    const allCountyHeadlines = document.querySelectorAll('#contact-points h3');
+    allCountyHeadlines.forEach(headline => {
+        const county = headline.dataset.county;
+        const pointsForCounty = document.querySelectorAll(`.contact-point[data-county="${county}"]`);
+        const isAnyPointVisible = Array.from(pointsForCounty).some(point => !point.classList.contains('hidden'));
+        
+        headline.classList.toggle('hidden', !isAnyPointVisible);
+    });
+  };
+
   const handleLoadMore = () => {
     const hiddenPoints = document.querySelectorAll('.contact-point.hidden');
     
     for (let i = 0; i < 3 && i < hiddenPoints.length; i++) {
       hiddenPoints[i].classList.remove('hidden');
     }
+
+    updateHeadlineVisibility();
 
     if (hiddenPoints.length <= 3) {
       loadMoreButton.style.display = 'none';
@@ -79,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
       allContactPoints.forEach((point, index) => {
         point.classList.toggle('hidden', index >= 5);
       });
+
+      updateHeadlineVisibility();
 
       if (allContactPoints.length > 5) {
         loadMoreButton.style.display = 'block';
