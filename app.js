@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let allData = {};
   let activeCountyPath = null;
 
+  /**
+   * Highlights the selected county on the SVG map.
+   * @param {string} countyId - The ID of the county to highlight, or 'all' to clear selection.
+   */
   const updateActiveMapCounty = (countyId) => {
     const svgDoc = sachsenMapObject.contentDocument;
     if (!svgDoc) return;
@@ -25,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  /**
+   * Toggles the 'active' class on the filter buttons.
+   * @param {string} countyId - The ID of the currently selected county.
+   */
   const updateActiveFilterButton = (countyId) => {
     const buttons = filterBar.querySelectorAll('button');
     buttons.forEach(button => {
@@ -32,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  /**
+   * Filters the contact points list based on the selected county.
+   * It also triggers updates for the map and filter buttons.
+   * @param {string} countyId - The ID of the county to filter by, or 'all' to show all.
+   */
   const filterContactPoints = (countyId) => {
     const allCountyHeadlines = document.querySelectorAll('#contact-points h3');
     const allContactPoints = document.querySelectorAll('.contact-point');
@@ -48,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveMapCounty(countyId);
   };
 
+  /**
+   * Creates and appends the filter buttons to the filter bar.
+   * One button for each county and a button to show all.
+   */
   const createFilterBar = () => {
     const clearButton = document.createElement('button');
     clearButton.textContent = 'Alle anzeigen';
@@ -65,6 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  /**
+   * Renders the entire list of contact points from the fetched data.
+   * It groups contact points by county.
+   */
   const renderContactPoints = () => {
     contactPointsContainer.innerHTML = '<h2>Kontaktstellen</h2>';
     contactPointsContainer.appendChild(filterBar);
@@ -127,6 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  /**
+   * Fetches the contact point data from the JSON file,
+   * then initializes the application by rendering the data and setting up filters.
+   */
   fetch('contact-points.json')
     .then(response => response.json())
     .then(data => {
@@ -139,6 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sachsenMapObject.addEventListener('dragstart', (e) => e.preventDefault());
 
+  /**
+   * Sets up event listeners for the SVG map once it has loaded.
+   * This includes click handlers for counties to trigger filtering.
+   */
   sachsenMapObject.addEventListener('load', () => {
     const svgDoc = sachsenMapObject.contentDocument;
     if (!svgDoc) return;
