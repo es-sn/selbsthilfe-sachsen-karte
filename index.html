@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>selbsthilfe-sachen karte</title>
+  <title>Selbsthilfe-Sachsen-Karte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interaktive Karte der Selbsthilfekontaktstellen in Sachsen. Finden Sie Anlaufstellen in Ihrer Region.">
   <link rel="preload" href="style.css" as="style">
   <link rel="preload" href="app.js" as="script">
   <link rel="preload" href="contact-points.json" as="fetch" crossorigin="anonymous">
@@ -10,7 +12,7 @@
 </head>
 <body>
 <main>
-    <h1>selbsthilfe-sachen karte</h1>
+    <h1>Selbsthilfekontaktstellen Sachsen</h1>
     <p>Interaktive Karte der Selbsthilfegruppen in Sachsen</p>
 
   <div class="content-wrapper">
@@ -20,7 +22,9 @@
       <!-- The contact points will be loaded here -->
     </div>
     <div id="map-container">
-      <object type="image/svg+xml" data="assets/map.svg" id="sachsen-map" draggable="false"></object>
+      <object type="image/svg+xml" data="assets/map.svg" id="sachsen-map" draggable="false">
+        Karte von Sachsen, die die Standorte von Selbsthilfekontaktstellen zeigt.
+      </object>
     </div>
   </div>
 </main>
