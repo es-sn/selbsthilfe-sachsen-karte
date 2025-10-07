@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (const countyKey in allData) {
       const county = allData[countyKey];
       const button = document.createElement('button');
-      button.textContent = `${county.fullName} (${county.contactPoints.length})`;
+      button.textContent = county.fullName;
       button.dataset.county = countyKey;
       button.addEventListener('click', () => filterContactPoints(countyKey));
       filterBar.appendChild(button);
