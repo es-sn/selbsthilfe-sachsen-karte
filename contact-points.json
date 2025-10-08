@@ -107,59 +107,126 @@
   },
   "MEI": {
     "fullName": "Meißen",
-    "contactPoints": []
+    "contactPoints": [
+      {
+        "id": "MEI-001",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "carrier": "Diakonie Meißen",
+        "address": {
+          "street": "Johannesstraße 9",
+          "postalCode": "01662",
+          "city": "Meißen"
+        },
+        "contact": {
+          "phone": "+49 3521 72825913",
+          "email": "heike.ilc@diakonie-meissen.de",
+          "web": "https://www.diakonie-meissen.de/ich-suche-hilfe/menschen-in-notlagen/kontaktstelle-fuer-selbsthilfe/"
+        },
+        "social": {
+          "facebook": "https://www.facebook.com/diakonie.meissen.de",
+          "instagram": "https://www.instagram.com/diakonie.meissen.de/"
+        }
+      }
+    ]
   },
   "BZ": {
     "fullName": "Bautzen",
-    "contactPoints": []
+    "contactPoints": [
+      {
+        "id": "BZ-001",
+        "name": "Selbsthilfekontaktstelle",
+        "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
+        "address": {
+          "street": "Schulstraße 5",
+          "postalCode": "02977",
+          "city": "Hoyerswerda"
+        },
+        "contact": {
+          "phone": "+49 3571 408365",
+          "email": "sks-hoyerswerda@st-martin-stattrand.de",
+          "web": "https://www.selbsthilfe-landkreis-bautzen.de/"
+        }
+      },
+      {
+        "id": "BZ-002",
+        "name": "Selbsthilfekontaktstelle",
+        "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
+        "address": {
+          "street": "Löhrstraße 33",
+          "postalCode": "02625",
+          "city": "Bautzen"
+        },
+        "contact": {
+          "phone": "+49 3591 3515863",
+          "email": "sks-hoyerswerda@st-martin-stattrand.de",
+          "web": "https://www.selbsthilfe-landkreis-bautzen.de/"
+        }
+      }
+    ]
   },
   "GR": {
     "fullName": "Görlitz",
-    "contactPoints": []
+    "contactPoints": [
+       {
+        "id": "GR-001",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
+        "carrier": "Soziales Netzwerk Lausitz gGmbH",
+        "address": {
+          "street": "Albert-Schweitzer-Ring 32",
+          "postalCode": "02943",
+          "city": "Weißwasser"
+        },
+        "contact": {
+          "phone": "+49 3576 2584711",
+          "email": "gesundheit@snl.gmbh",
+          "web": "https://snl.gmbh/"
+        },
+        "social": {
+          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz/",
+          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz/"
+        }
+      },
+      {
+        "id": "GR-002",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
+        "carrier": "Soziales Netzwerk Lausitz gGmbH",
+        "address": {
+          "street": "Schulstraße 10",
+          "postalCode": "02906",
+          "city": "Niesky"
+        },
+        "contact": {
+          "phone": "+49 3576 2584717",
+          "email": "gesundheit@snl.gmbh",
+          "web": "https://snl.gmbh/"
+        },
+        "social": {
+          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz/",
+          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz/"
+        }
+      }
+    ]
   },
   "DD": {
     "fullName": "Dresden",
     "contactPoints": [
       {
         "id": "DD-001",
-        "name": "Selbsthilfekontaktstelle Dresden",
-        "carrier": "Träger name",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
+        "carrier": "Landeshauptstadt Dresden, Amt für Gesundheit und Prävention, Abt. Gesundheitsförderung/ Prävention",
         "address": {
-          "street": "Hauptstraße 1",
-          "postalCode": "01067",
+          "street": "Industriestraße 21",
+          "postalCode": "01129",
           "city": "Dresden"
         },
         "contact": {
-          "phone": "+49 351 1234567",
-          "mobile": "+49 171 2345678",
-          "email": "info@selbsthilfe.de",
-          "web": "https://www.selbsthilfe.de"
+          "phone": "+49 351 4884999",
+          "email": "kiss@dresden.de",
+          "web": "https://www.dresden.de/de/leben/gesundheit/beratung/selbsthilfe.php?pk_campaign=Shortcut&pk_kwd=Selbsthilfe"
         },
         "social": {
-          "facebook": "https://www.facebook.com/selbsthilfe",
-          "twitter": "https://twitter.com/selbsthilfe",
-          "instagram": "https://www.instagram.com/selbsthilfe"
-        }
-      },
-      {
-        "id": "DD-002",
-        "name": "Selbsthilfekontaktstelle Dresden",
-        "carrier": "Träger name",
-        "address": {
-          "street": "Hauptstraße 1",
-          "postalCode": "01067",
-          "city": "Dresden"
-        },
-        "contact": {
-          "phone": "+49 351 1234567",
-          "mobile": "+49 171 2345678",
-          "email": "info@selbsthilfe.de",
-          "web": "https://www.selbsthilfe.de"
-        },
-        "social": {
-          "facebook": "https://www.facebook.com/selbsthilfe",
-          "twitter": "https://twitter.com/selbsthilfe",
-          "instagram": "https://www.instagram.com/selbsthilfe"
+          "facebook": "https://www.facebook.com/stadt.dresden#",
+          "instagram": "https://www.instagram.com/landeshauptstadt_dresden/"
         }
       }
     ]
