@@ -1,0 +1,12 @@
+
+name: Validate JSON
+
+on: [push, pull_request]
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate contact-points.json
+        run: jq . contact-points.json
