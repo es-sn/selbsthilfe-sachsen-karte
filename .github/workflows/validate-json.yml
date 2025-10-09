@@ -14,25 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Validate JSON
-        id: validate
         uses: docker://orrosenblatt/validate-json-action:latest
         with:
           schema: schema.json
           jsons: contact-points.json
-
-      - name: Comment on PR with error
-        if: failure() && github.event_name == 'pull_request'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const message = `The following JSON files are invalid: ${{ steps.validate.outputs.invalid }}`;
-            await github.rest.issues.createComment({
-              ...context.repo,
-              issue_number: context.issue.number,
-              body: message
-            });
-            await github.rest.issues.addAssignees({
-              ...context.repo,
-              issue_number: context.issue.number,
-              assignees: [context.actor]
-            });
