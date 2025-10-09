@@ -1,0 +1,46 @@
+# .github/workflows/deploy-pages.yml
+
+name: Validate & deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # First, validate the JSON files
+  validate:
+    uses: ./.github/workflows/validate-json.yml
+
+  # If validation succeeds, build and deploy the site
+  deploy:
+    needs: validate # This line ensures deploy only runs if 'validate' job succeeds
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      # NOTE: This workflow assumes your site is already built in the repo.
+      # If you have a build step (like npm run build), you must add it here.
+      # For a pure HTML/CSS/JS site, this is fine.
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # This should be the folder containing your website's files (e.g., index.html)
+          # The root directory is represented by '.'
+          path: '.' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
