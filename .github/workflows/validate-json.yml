@@ -1,0 +1,51 @@
+name: Validate JSON Files
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Validate JSON files
+        run: |
+          # Find all JSON files excluding node_modules, build, dist, and .git directories
+          json_files=$(find . -type f -name "*.json" \
+            -not -path "*/node_modules/*" \
+            -not -path "*/build/*" \
+            -not -path "*/dist/*" \
+            -not -path "*/.git/*")
+          
+          exit_code=0
+          
+          # Validate each JSON file
+          for file in $json_files; do
+            echo "Validating $file..."
+            if ! python -m json.tool "$file" > /dev/null 2> /tmp/json_error.txt; then
+              error_msg=$(cat /tmp/json_error.txt)
+              echo "::error file=$file::JSON parse error: $error_msg"
+              echo "ERROR in $file: $error_msg"
+              exit_code=1
+            else
+              echo "✓ $file is valid"
+            fi
+          done
+          
+          if [ $exit_code -ne 0 ]; then
+            echo "::error::One or more JSON files are invalid"
+            exit 1
+          fi
+          
+          echo "All JSON files are valid!"
