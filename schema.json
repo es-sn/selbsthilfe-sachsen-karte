@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Schema for contact-points.json",
+  "type": "object",
+  "patternProperties": {
+    "^[A-Z-]+$": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "contactPoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "carrier": {
+                "type": "string"
+              },
+              "address": {
+                "type": "object",
+                "properties": {
+                  "street": {
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              },
+              "contact": {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "type": "string"
+                  },
+                  "mobile": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "web": {
+                    "type": "string"
+                  }
+                }
+              },
+              "openingHours": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "structured": {
+                    "type": "object"
+                  }
+                }
+              },
+              "social": {
+                "type": "object",
+                "properties": {
+                  "facebook": {
+                    "type": "string"
+                  },
+                  "instagram": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "required": ["id", "name"]
+          }
+        }
+      },
+      "required": ["fullName"]
+    }
+  }
+}

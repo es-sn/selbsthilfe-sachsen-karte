@@ -1,4 +1,3 @@
-
 name: Validate JSON
 
 on:
@@ -15,6 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Validate JSON
-        uses: rhysd/action-validate-json@v2
-        with:
-          file: contact-points.json
+        id: validate_json
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: schema.json
+          INPUT_JSONS: contact-points.json
+      - name: Report validation failure
+        if: failure()
+        run: echo "JSON validation failed. Invalid files: ${{ steps.validate_json.outputs.invalid }}"
