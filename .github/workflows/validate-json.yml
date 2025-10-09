@@ -21,20 +21,18 @@ jobs:
           jsons: contact-points.json
 
       - name: Comment on PR with error
-        if: failure()
+        if: failure() && github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           script: |
-            const { owner, repo } = context.repo;
-            const prNumber = context.payload.pull_request.number;
-            if (!prNumber) {
-              core.warning('Not a PR, skipping comment');
-              return;
-            }
             const message = `The following JSON files are invalid: ${{ steps.validate.outputs.invalid }}`;
-            github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number: prNumber,
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
               body: message
+            });
+            await github.rest.issues.addAssignees({
+              ...context.repo,
+              issue_number: context.issue.number,
+              assignees: [context.actor]
             });
