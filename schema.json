@@ -60,8 +60,23 @@
                   "text": {
                     "type": "string"
                   },
+                  "comment": {
+                    "type": "string"
+                  },
+                  "lastUpdated": {
+                    "type": "string",
+                    "format": "date"
+                  },
                   "structured": {
-                    "type": "object"
+                    "type": "object",
+                    "patternProperties": {
+                      "^(mon|tue|wed|thu|fri|sat|sun)$": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
                   }
                 }
               },
