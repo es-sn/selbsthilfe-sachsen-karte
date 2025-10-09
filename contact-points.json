@@ -4,7 +4,7 @@
     "contactPoints": [
       {
         "id": "TDO-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
         "carrier": "Landratsamt Nordsachsen",
         "address": {
           "street": "Richard-Wagner-Straße 7a",
@@ -15,11 +15,19 @@
           "phone": "+49 3421 7586321",
           "email": "kiss@lra-nordsachsen.de",
           "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
-        }
-      },
+        },
+        "openingHours": {
+          "text": "Dienstag 09:00–11:30 und 13:00–18:00 Uhr",
+          "structured": {
+            "tue": [
+              "09:00–11:30",
+              "13:00–18:00"
+            ]
+          }
+        },
       {
         "id": "TDO-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Torgau",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen, Außenstelle Torgau",
         "carrier": "Landratsamt Nordsachsen",
         "address": {
           "street": "Südring 17",
