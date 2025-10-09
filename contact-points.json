@@ -1,3 +1,4 @@
+test]
 {
   "TDO": {
     "fullName": "Nordsachsen",
@@ -217,7 +218,7 @@
     ]
   },
   "DD": {
-    "fullName": "Dresden test",
+    "fullName": "Dresden",
     "contactPoints": [
       {
         "id": "DD-001",
