@@ -289,7 +289,6 @@ p.carrier {
     #contact-points, #map-container {
         width: 100%;
         height: 50vh;
-        padding-right: 0;
     }
 }
 
