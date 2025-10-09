@@ -1,0 +1,66 @@
+name: Validate JSON Files
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Validate JSON files
+        run: |
+          # Find all JSON files, excluding node_modules and common build directories
+          json_files=$(find . -type f -name "*.json" \
+            -not -path "*/node_modules/*" \
+            -not -path "*/dist/*" \
+            -not -path "*/build/*" \
+            -not -path "*/.git/*")
+          
+          # Check if any JSON files were found
+          if [ -z "$json_files" ]; then
+            echo "No JSON files found to validate."
+            exit 0
+          fi
+          
+          echo "Found JSON files to validate:"
+          echo "$json_files"
+          echo ""
+          
+          # Track validation status
+          has_errors=0
+          
+          # Validate each JSON file
+          while IFS= read -r file; do
+            echo "Validating: $file"
+            if ! python3 -m json.tool "$file" > /dev/null 2>&1; then
+              echo "❌ FAILED: $file"
+              echo "Error details:"
+              python3 -m json.tool "$file" 2>&1 || true
+              echo ""
+              has_errors=1
+            else
+              echo "✅ PASSED: $file"
+            fi
+          done <<< "$json_files"
+          
+          # Exit with error if any validation failed
+          if [ $has_errors -eq 1 ]; then
+            echo ""
+            echo "JSON validation failed. Please fix the errors above."
+            exit 1
+          else
+            echo ""
+            echo "All JSON files are valid!"
+          fi
