@@ -1,0 +1,85 @@
+# Validate JSON first, then build & deploy to GitHub Pages via Actions.
+# IMPORTANT: In Settings → Pages → Build and deployment, set Source to "GitHub Actions"
+# so Pages uses this workflow's deployment. Change the `path: ./public` below if your
+# build outputs somewhere else (e.g. ./dist).
+name: Validate & deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  validate:
+    name: Validate JSON files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Find and validate JSON files
+        run: |
+          set -euo pipefail
+          echo "Searching for .json files (excluding node_modules, build, dist, .git)"
+          failed=0
+          while IFS= read -r -d '' file; do
+            echo "Checking $file"
+            if ! python -m json.tool "$file" 2>err; then
+              echo "::error file=$file::Invalid JSON in $file"
+              echo "----- parse error for $file -----"
+              cat err
+              echo "---------------------------------"
+              failed=1
+            fi
+          done < <(find . -type f -name '*.json' \
+            -not -path './node_modules/*' \
+            -not -path './build/*' \
+            -not -path './dist/*' \
+            -not -path './.git/*' -print0)
+
+          if [ "$failed" -ne 0 ]; then
+            echo "One or more JSON files failed validation."
+            exit 1
+          fi
+
+          echo "All JSON files are valid."
+
+  deploy:
+    name: Build and deploy Pages
+    needs: validate
+    runs-on: ubuntu-latest
+    if: needs.validate.result == 'success'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build site (placeholder)
+        run: |
+          echo "No build configured in this workflow — deploying ./public as Pages content."
+          # Replace this block with your real build commands, e.g.:
+          # npm ci
+          # npm run build
+          # or
+          # hugo --minify
+          # Ensure the final static output is placed in ./public (or change the path below)
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Change this to your actual build output directory if different (e.g. ./public, ./dist, ./build)
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
