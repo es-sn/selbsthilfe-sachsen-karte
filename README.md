@@ -1,7 +1,10 @@
 # Selbsthilfe Sachsen Karte
 
-[![Validate JSON](https://github.com/es-sn/selbsthilfe-sachsen-karte/actions/workflows/validate-json.yml/badge.svg)](https://github.com/es-sn/selbsthilfe-sachsen-karte/actions/workflows/validate-json.yml)<br>
-[![Deploy static content to Pages](https://github.com/es-sn/selbsthilfe-sachsen-karte/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/es-sn/selbsthilfe-sachsen-karte/actions/workflows/deploy-pages.yml)
+[![Validate JSON](https://github.com/es-sn/selbsthilfe-sachsen-karte/actions/workflows/validate-json.yml/badge.svg)](https://github.com/es-sn/selbsthilfe-sachsen-karte/actions/workflows/validate-json.yml)
+
+## Live Page
+[Click here to see the live page.](https://es-sn.github.io/selbsthilfe-sachsen-karte/)
+[![GitHub Pages Deployment](https://img.shields.io/github/deployments/es-sn/selbsthilfe-sachsen-karte/github-pages)](https://github.com/es-sn/selbsthilfe-sachsen-karte/deployments)
 
 ## Contributing
 
