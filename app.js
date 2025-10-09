@@ -213,6 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
             addressEl.style.display = 'none';
           }
 
+          // Opening hours are optional.
+          const openingHoursEl = clone.querySelector('.opening-hours-grid');
+          if (point.openingHours && point.openingHours.text) {
+            setText('.opening-hours-value', point.openingHours.text);
+          } else if (openingHoursEl) {
+            openingHoursEl.style.display = 'none';
+          }
+
           // Contact links are optional.
           setLink('.phone', point.contact && point.contact.phone, 'tel:');
           setLink('.mobile', point.contact && point.contact.mobile, 'tel:');
@@ -269,6 +277,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (point.contact.mobile) parts.push(`Mobil: ${point.contact.mobile}`);
                 if (point.contact.email) parts.push(`Email: ${point.contact.email}`);
                 if (point.contact.web) parts.push(`Web: ${point.contact.web}`);
+              }
+
+              if (point.openingHours && point.openingHours.text) {
+                parts.push(`Öffnungszeiten: ${point.openingHours.text}`);
               }
 
               if (point.social) {

@@ -172,7 +172,7 @@ p.carrier {
     margin-bottom: 0.75rem;
 }
 
-.contact-grid {
+.contact-grid, .opening-hours-grid {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 3px 1rem;
@@ -182,6 +182,8 @@ p.carrier {
     margin: 0.25rem;
     margin-bottom: 0.75rem;
 }
+
+
 
 .contact-point .contact-grid strong {
     color: var(--primary-color);
