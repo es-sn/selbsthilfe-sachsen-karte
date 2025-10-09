@@ -14,5 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Validate contact-points.json
-        run: jq . contact-points.json
+      - name: Validate JSON
+        uses: rhysd/action-validate-json@v2
+        with:
+          file: contact-points.json
