@@ -138,6 +138,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const fallbackCopyTextToClipboard = (text, onSuccess) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+  
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+  
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        onSuccess();
+      } else {
+        console.error('Fallback: Oops, unable to copy');
+      }
+    } catch (err) {
+      console.error('Fallback: Oops, unable to copy', err);
+    }
+  
+    document.body.removeChild(textArea);
+  }
+
   /**
    * Renders the entire list of contact points from the fetched data.
    * It groups contact points by county.
@@ -301,10 +328,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
               const textToCopy = parts.join('\n');
 
-              navigator.clipboard.writeText(textToCopy).then(() => {
+              const copySuccess = () => {
                 const icon = copyButton.querySelector('img');
                 if (!icon) return;
-
                 const originalIconSrc = 'assets/icons/Clipboard32x32.svg';
                 const checkIconSrc = 'assets/icons/ClipboardCheck32x32.svg';
 
@@ -315,9 +341,16 @@ document.addEventListener('DOMContentLoaded', () => {
                   icon.src = originalIconSrc;
                   copyButton.classList.remove('copied');
                 }, 1000);
-              }).catch(err => {
-                console.error('Failed to copy text: ', err);
-              });
+              };
+
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy).then(copySuccess).catch(err => {
+                  console.error('Failed to copy with clipboard API, trying fallback: ', err);
+                  fallbackCopyTextToClipboard(textToCopy, copySuccess);
+                });
+              } else {
+                fallbackCopyTextToClipboard(textToCopy, copySuccess);
+              }
             });
           }
 
