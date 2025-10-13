@@ -313,12 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
               if (point.contact) {
                 if (point.contact.phone) parts.push(`Telefon: ${point.contact.phone}`);
                 if (point.contact.mobile) parts.push(`Mobil: ${point.contact.mobile}`);
-                if (point.contact.email) parts.push(`Email: ${point.contact.email}`);
+                if (point.contact.email) parts.push(`E-Mail: ${point.contact.email}`);
                 if (point.contact.web) parts.push(`Web: ${point.contact.web}`);
               }
 
               if (point.openingHours && point.openingHours.text) {
-                parts.push(`Öffnungszeiten: ${point.openingHours.text}`);
+                parts.push(`Sprechzeiten: ${point.openingHours.text}`);
               }
 
               if (point.social) {
