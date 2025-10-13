@@ -327,6 +327,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const autoSelectCountyOnMobile = () => {
+    const mapContainer = document.getElementById('map-container');
+    const isMobileView = window.getComputedStyle(mapContainer).display === 'none';
+
+    const activeButton = filterBar.querySelector('button.active');
+    const noCountySelected = !activeButton || activeButton.dataset.county === 'all';
+
+    if (isMobileView && noCountySelected) {
+      const firstCountyKey = Object.keys(allData)[0];
+      if (firstCountyKey) {
+        filterContactPoints(firstCountyKey);
+      }
+    }
+  };
+
   /**
    * Fetches the contact point data from the JSON file,
    * then initializes the application by rendering the data and setting up filters.
@@ -338,8 +353,11 @@ document.addEventListener('DOMContentLoaded', () => {
       renderContactPoints();
       createFilterBar();
       filterContactPoints('all');
+      autoSelectCountyOnMobile();
     })
     .catch(error => console.error('Error fetching contact points:', error));
+
+  window.addEventListener('resize', autoSelectCountyOnMobile);
 
   sachsenMapObject.addEventListener('dragstart', (e) => e.preventDefault());
 
