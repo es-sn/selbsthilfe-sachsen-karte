@@ -1,774 +1,97 @@
-{
-  "TDO": {
-    "fullName": "Nordsachsen",
-    "contactPoints": [
-      {
-        "id": "TDO-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
-        "carrier": "Landratsamt Nordsachsen",
-        "adress": {
-          "street": "Richard-Wagner-Straße 7a",
-          "postalCode": "04509",
-          "city": "Delitzsch"
-        },
-        "contact": {
-          "phone": "+49 3421 7586321",
-          "mobil": "",
-          "email": "kiss@lra-nordsachsen.de",
-          "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
-        },
-        "openingHours": {
-          "text": "Dienstag 09:00–11:30 und 13:00–18:00 Uhr",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "09:00–11:30",
-              "13:00–18:00"
-            ],
-            "wed": [],
-            "thu": [],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
+"$schema": "http://json-schema.org/draft-07/schema#",
+"title": "Schema for contact-points.json",
+"type": "object",
+"patternProperties": {
+  "^[A-Z-]+$": {
+    "type": "object",
+    "properties": {
+      "fullName": {
+        "type": "string"
       },
-      {
-        "id": "TDO-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen, Außenstelle Torgau",
-        "carrier": "Landratsamt Nordsachsen",
-        "adress": {
-          "street": "Südring 17",
-          "postalCode": "04860",
-          "city": "Torgau"
-        },
-        "contact": {
-          "phone": "+49 3421 7586357",
-          "mobil": "",
-          "email": "kiss@lra-nordsachsen.de",
-          "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
-        },
-        "openingHours": {
-          "text": "",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [],
-            "wed": [],
-            "thu": [],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "L": {
-    "fullName": "Leipzig",
-    "contactPoints": [
-      {
-        "id": "L-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
-        "carrier": "Stadt Leipzig, Gesundheitsamt",
-        "adress": {
-          "street": "Gustav-Mahler-Straße 3, Hochparterre",
-          "postalCode": "04109",
-          "city": "Leipzig"
-        },
-        "contact": {
-          "phone": "+49 341 1236755",
-          "mobil": "+49 341 1236763",
-          "email": "selbsthilfe@leipzig.de",
-          "web": "https://www.leipzig.de/selbsthilfe"
-        },
-        "openingHours": {
-          "text": "Dienstag 09:00–12:00 und 14:00–18:00 Uhr; nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "09:00–12:00",
-              "14:00–18:00"
-            ],
-            "wed": [],
-            "thu": [],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "L-Land": {
-    "fullName": "Leipzig (Landkreis)",
-    "contactPoints": [
-      {
-        "id": "L-Land-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
-        "carrier": "Diakonie Leipziger Land",
-        "adress": {
-          "street": "Nicolaiplatz 5",
-          "postalCode": "04668",
-          "city": "Grimma"
-        },
-        "contact": {
-          "phone": "+49 3437 701622",
-          "mobil": "",
-          "email": "kiss@diakonie-leipziger-land.de",
-          "web": "https://www.selbsthilfe-ehrenamt.de/"
-        },
-        "openingHours": {
-          "text": "Montag 09:00–12:00 Uhr, Dienstag 09:00–12:00 und 13:00–17:00 Uhr",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "09:00–12:00"
-            ],
-            "tue": [
-              "09:00–12:00",
-              "13:00–17:00"
-            ],
-            "wed": [],
-            "thu": [],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      },
-      {
-        "id": "L-Land-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Wurzen",
-        "carrier": "Diakonie Leipziger Land",
-        "adress": {
-          "street": "Bahnhofsstaße 22",
-          "postalCode": "04808",
-          "city": "Wurzen"
-        },
-        "contact": {
-          "phone": "+49 3425 9182762",
-          "mobil": "",
-          "email": "kiss@diakonie-leipziger-land.de",
-          "web": "https://www.selbsthilfe-ehrenamt.de/"
-        },
-        "openingHours": {
-          "text": "Dienstag 09:00–12:00 und 13:00–15:00 Uhr",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "09:00–12:00",
-              "13:00–15:00"
-            ],
-            "wed": [],
-            "thu": [],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      },
-      {
-        "id": "L-Land-003",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Borna",
-        "carrier": "Diakonie Leipziger Land",
-        "adress": {
-          "street": "Leipziger Straße 79",
-          "postalCode": "04552",
-          "city": "Borna"
-        },
-        "contact": {
-          "phone": "+49 3433 274040",
-          "mobil": "",
-          "email": "kiss@diakonie-leipziger-land.de",
-          "web": "https://www.selbsthilfe-ehrenamt.de/"
-        },
-        "openingHours": {
-          "text": "Donnerstag 11:00–15:00 Uhr",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [],
-            "wed": [],
-            "thu": [
-              "11:00–15:00"
-            ],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "MEI": {
-    "fullName": "Meißen",
-    "contactPoints": [
-      {
-        "id": "MEI-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
-        "carrier": "Diakonisches Werk Meißen gGmbH",
-        "adress": {
-          "street": "Johannesstraße 9",
-          "postalCode": "01662",
-          "city": "Meißen"
-        },
-        "contact": {
-          "phone": "+49 3521 72825913",
-          "mobil": "",
-          "email": "heike.ilc@diakonie-meissen.de",
-          "web": "https://www.diakonie-meissen.de/ich-suche-hilfe/menschen-in-notlagen/kontaktstelle-fuer-selbsthilfe/"
-        },
-        "openingHours": {
-          "text": "Dienstag 08:00–12:00 und 13:00–15:00 Uhr, Dienstag und Donnerstag 07:00–12:00 und 13:00–15:30 Uhr; nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "08:00–12:00",
-              "13:00–18:00"
-            ],
-            "wed": [
-              "07:00–12:00",
-              "13:00–15:30"
-            ],
-            "thu": [
-              "07:00–12:00",
-              "13:00–15:30"
-            ],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "https://www.facebook.com/diakonie.meissen.de",
-          "instagram": "https://www.instagram.com/diakonie.meissen.de/"
-        }
-      }
-    ]
-  },
-  "BZ": {
-    "fullName": "Bautzen",
-    "contactPoints": [
-      {
-        "id": "BZ-001",
-        "name": "Selbsthilfekontaktstelle",
-        "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
-        "adress": {
-          "street": "Schulstraße 5",
-          "postalCode": "02977",
-          "city": "Hoyerswerda"
-        },
-        "contact": {
-          "phone": "+49 3571 408365",
-          "mobil": "",
-          "email": "sks-hoyerswerda@st-martin-stattrand.de",
-          "web": "https://www.selbsthilfe-landkreis-bautzen.de/"
-        },
-        "openingHours": {
-          "text": "Dienstag 13:00–17:00 Uhr, Donnerstag 10:00–15:00 Uhr; nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "13:00–17:00"
-            ],
-            "wed": [],
-            "thu": [
-              "10:00–15:00"
-            ],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      },
-      {
-        "id": "BZ-002",
-        "name": "Selbsthilfekontaktstelle",
-        "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
-        "adress": {
-          "street": "Löhrstraße 33",
-          "postalCode": "02625",
-          "city": "Bautzen"
-        },
-        "contact": {
-          "phone": "+49 3591 3515863",
-          "mobil": "",
-          "email": "sks-hoyerswerda@st-martin-stattrand.de",
-          "web": "https://www.selbsthilfe-landkreis-bautzen.de/"
-        },
-        "openingHours": {
-          "text": "Dienstag https://snl.gmbh/, Donnerstag 13:00–17:00 Uhr; nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "10:00–15:00"
-            ],
-            "wed": [],
-            "thu": [
-              "13:00–17:00"
-            ],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "GR": {
-    "fullName": "Görlitz",
-    "contactPoints": [
-      {
-        "id": "GR-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
-        "carrier": "Soziales Netzwerk Lausitz gGmbH",
-        "adress": {
-          "street": "Albert-Schweitzer-Ring 32",
-          "postalCode": "02943",
-          "city": "Weißwasser"
-        },
-        "contact": {
-          "phone": "+49 3576 2584711",
-          "mobil": "",
-          "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh/"
-        },
-        "openingHours": {
-          "text": "Montag, Mittwoch und Freitag 09:00–16:00 Uhr",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "09:00–16:00"
-            ],
-            "tue": [],
-            "wed": [
-              "09:00–16:00"
-            ],
-            "thu": [],
-            "fri": [
-              "09:00–16:00"
-            ],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz/",
-          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz/"
-        }
-      },
-      {
-        "id": "GR-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
-        "carrier": "Soziales Netzwerk Lausitz gGmbH",
-        "adress": {
-          "street": "Schulstraße 10",
-          "postalCode": "02906",
-          "city": "Niesky"
-        },
-        "contact": {
-          "phone": "+49 3576 2584717",
-          "mobil": "",
-          "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh/"
-        },
-        "openingHours": {
-          "text": "",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [],
-            "wed": [],
-            "thu": [],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz/",
-          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz/"
-        }
-      }
-    ]
-  },
-  "DD": {
-    "fullName": "Dresden",
-    "contactPoints": [
-      {
-        "id": "DD-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
-        "carrier": "Landeshauptstadt Dresden, Amt für Gesundheit und Prävention, Abt. Gesundheitsförderung/ Prävention",
-        "adress": {
-          "street": "Industriestraße 21",
-          "postalCode": "01129",
-          "city": "Dresden"
-        },
-        "contact": {
-          "phone": "+49 351 4884999",
-          "mobil": "",
-          "email": "kiss@dresden.de",
-          "web": "https://www.dresden.de/de/leben/gesundheit/beratung/selbsthilfe.php?pk_campaign=Shortcut&pk_kwd=Selbsthilfe"
-        },
-        "openingHours": {
-          "text": "Montag nach Vereinbarung, Dienstag 09:00–12:00 und 14:00–18:00 Uhr, Donnerstag 09:00–12:00 und 14:00–16:00 Uhr, Freitag nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "appointment"
-            ],
-            "tue": [
-              "09:00–12:00",
-              "14:00–18:00"
-            ],
-            "wed": [],
-            "thu": [
-              "09:00–12:00",
-              "14:00–16:00"
-            ],
-            "fri": [
-              "appointment"
-            ],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "https://www.facebook.com/stadt.dresden#",
-          "instagram": "https://www.instagram.com/landeshauptstadt_dresden/"
-        }
-      }
-    ]
-  },
-  "PIR": {
-    "fullName": "Sächsische Schweiz-Osterzgebirge",
-    "contactPoints": [
-      {
-        "id": "PIR-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
-        "carrier": "Bürgerhilfe Sachsen e.V.",
-        "adress": {
-          "street": "Schillerstraße 35",
-          "postalCode": "01796",
-          "city": "Pirna"
-        },
-        "contact": {
-          "phone": "",
-          "mobil": "",
-          "email": "kiss-pirna@buergerhilfe-sachsen.de",
-          "web": "https://www.kiss-pirna.de"
-        },
-        "openingHours": {
-          "text": "Dienstag 09:00–12:00 Uhr und Donnerstag 09:00–17:00 Uhr; nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [],
-            "tue": [
-              "09:00–12:00"
-            ],
-            "wed": [],
-            "thu": [
-              "09:00–17:00"
-            ],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "FG": {
-    "fullName": "Mittelsachsen",
-    "contactPoints": [
-      {
-        "id": "FG-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
-        "carrier": "Verein für betreutes Wohnen Mittweida e.V.",
-        "adress": {
-          "street": "Zimmerstraße 12",
-          "postalCode": "09648",
-          "city": "Mittweida"
-        },
-        "contact": {
-          "phone": "",
-          "mobil": "",
-          "email": "selbsthilfe@kiss-mittelsachsen.de",
-          "web": "https://www.kiss-mittelsachsen.de"
-        },
-        "openingHours": {
-          "text": "Montag 12:00–17:00 Uhr und Freitag 08:00–12:00 Uhr; nach Vereinbarung",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "12:00–17:00"
-            ],
-            "tue": [],
-            "wed": [],
-            "thu": [],
-            "fri": [
-              "08:00–12:00"
-            ],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "C": {
-    "fullName": "Chemitz",
-    "contactPoints": [
-      {
-        "id": "C-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
-        "carrier": "Stadtmission Chemnitz e.V.",
-        "adress": {
-          "street": "Rembrandtstraße 13b",
-          "postalCode": "09111",
-          "city": "Chemnitz"
-        },
-        "contact": {
-          "phone": "",
-          "mobil": "",
-          "email": "selbsthilfe@stadtmission-chemnitz.de",
-          "web": "https://www.kiss-selbsthilfe-chemnitz.de"
-        },
-        "openingHours": {
-          "text": "Telefonisch: Dienstag 13:00–17:00 Uhr, Donnerstag 09:00–12:00 und 14:00–18:00 Uhr",
-          "comment": "Persönliche Beratung nach Vereinbarung",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "appointment"
-            ],
-            "tue": [
-              "appointment"
-            ],
-            "wed": [
-              "appointment"
-            ],
-            "thu": [
-              "appointment"
-            ],
-            "fri": [
-              "appointment"
-            ],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "Z": {
-    "fullName": "Zwickau",
-    "contactPoints": [
-      {
-        "id": "Z-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
-        "carrier": "Verein 'Gesundheit für alle' e.V.",
-        "adress": {
-          "street": "Scheffelstraße 42",
-          "postalCode": "08066",
-          "city": "08066"
-        },
-        "contact": {
-          "phone": "",
-          "mobil": "",
-          "email": "kiss@selbsthilfe-zwickau.de",
-          "web": "kiss@selbsthilfe-zwickau.de"
-        },
-        "openingHours": {
-          "text": "Dienstag und Donnerstag 10:00–12:00 und 13:00–15:00 Uhr",
-          "comment": "Nach Vereinbarung",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "appointment"
-            ],
-            "tue": [
-              "10:00–12:00",
-              "13:00–15:00"
-            ],
-            "wed": [
-              "appointment"
-            ],
-            "thu": [
-              "10:00–12:00",
-              "13:00–15:00"
-            ],
-            "fri": [
-              "appointment"
-            ],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "ERZ": {
-    "fullName": "Erzgebirgskreis",
-    "contactPoints": [
-      {
-        "id": "Z-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
-        "carrier": "ABiD Sachsen e.V.",
-        "adress": {
-          "street": "Scheffelstraße 3",
-          "postalCode": "09496",
-          "city": "Marienberg"
-        },
-        "contact": {
-          "phone": "",
-          "mobil": "",
-          "email": "kiss.marienberg@abidsachsen.de",
-          "web": "https://www.kiss-erz.de "
-        },
-        "openingHours": {
-          "text": "Montag 08:00–15:00 Uhr, Dienstag 08:00–18:00 Uhr und Donnerstag 08:00–16:00 Uhr",
-          "comment": "",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "08:00–15:00 Uhr"
-            ],
-            "tue": [
-              "08:00–18:00 Uhr"
-            ],
-            "wed": [],
-            "thu": [
-              "08:00–16:00 Uhr"
-            ],
-            "fri": [],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  },
-  "V": {
-    "fullName": "Vogtlandkreis",
-    "contactPoints": [
-      {
-        "id": "V-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
-        "carrier": "Landratsamt Vogtlandkreis, Gesundheitsamt",
-        "adress": {
-          "street": "Postplatz 5",
-          "postalCode": "08523",
-          "city": "Plauen"
-        },
-        "contact": {
-          "phone": "",
-          "mobil": "",
-          "email": "kiss-pirna@buergerhilfe-sachsen.de",
-          "web": "https://www.kiss-pirna.de "
-        },
-        "openingHours": {
-          "text": "Montag und Freitag 09:00–12:00 Uhr und 09:00–17:00 Uhr",
-          "comment": "Nach Vereinbarung",
-          "lastUpdatet": "2025-10-14",
-          "structured": {
-            "mon": [
-              "appointment"
-            ],
-            "tue": [
-              "09:00–12:00 Uhr"
-            ],
-            "wed": [
-              "appointment"
-            ],
-            "thu": [
-              "09:00–17:00 Uhr"
-            ],
-            "fri": [
-              "appointment"
-            ],
-            "sat": [],
-            "sun": []
-          }
-        },
-        "social": {
-          "facebook": "",
-          "instagram": ""
-        }
-      }
-    ]
-  }
-}
+      "contactPoints": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "carrier": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                }
+              }
+            },
+            "contact": {
+              "type": "object",
+              "properties": {
+                "phone": {
+                  "type": "string"
+                },
+                "mobile": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "web": {
+                  "type": "string"
+                }
+              }
+            },
+            "openingHours": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "lastUpdated": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "structured": {
+                  "type": "object",
+                  "patternProperties": {
+                    "^(mon|tue|wed|thu|fri|sat|sun)$": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "social": {
+              "type": "object",
+              "properties": {
+                "facebook": {
+                  "type": "string"
+                },
+                "instagram": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
