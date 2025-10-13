@@ -2,12 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactPointsContainer = document.getElementById('contact-points');
   const contactList = document.getElementById('contact-list');
   const template = document.getElementById('contact-point-template');
+  const initialMessageTemplate = document.getElementById('initial-message-template');
   const sachsenMapObject = document.getElementById('sachsen-map');
   const filterBar = document.getElementById('filter-bar');
 
   let allData = {};
   let activeCountyPath = null;
   let loadMoreButton = null;
+
+  const itemsPerLoad = 5;
 
   /**
    * Highlights the selected county on the SVG map.
@@ -54,16 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const handleLoadMore = () => {
-    const hiddenPoints = document.querySelectorAll('.contact-point.hidden');
-    
-    for (let i = 0; i < 3 && i < hiddenPoints.length; i++) {
-      hiddenPoints[i].classList.remove('hidden');
+    const activeButton = filterBar.querySelector('button.active');
+    if (!activeButton) return;
+    const activeCountyId = activeButton.dataset.county;
+
+    const hiddenPoints = document.querySelectorAll(`.contact-point.hidden[data-county="${activeCountyId}"]`);
+
+    for (let i = 0; i < itemsPerLoad && i < hiddenPoints.length; i++) {
+        hiddenPoints[i].classList.remove('hidden');
     }
 
     updateHeadlineVisibility();
 
-    if (hiddenPoints.length <= 3) {
-      loadMoreButton.style.display = 'none';
+    if (hiddenPoints.length <= itemsPerLoad) {
+        loadMoreButton.style.display = 'none';
     }
   };
 
@@ -75,38 +82,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterContactPoints = (countyId) => {
     const allCountyHeadlines = document.querySelectorAll('#contact-points h3');
     const allContactPoints = document.querySelectorAll('.contact-point');
+    const initialMessage = document.querySelector('.initial-message');
 
     if (!loadMoreButton) {
       loadMoreButton = document.createElement('button');
       loadMoreButton.textContent = 'Mehr laden';
       loadMoreButton.id = 'load-more';
       loadMoreButton.addEventListener('click', handleLoadMore);
-      contactPointsContainer.appendChild(loadMoreButton);
+      contactList.appendChild(loadMoreButton);
     }
-    
     loadMoreButton.style.display = 'none';
+    if (initialMessage) initialMessage.style.display = 'none';
 
     if (countyId === 'all') {
-      allCountyHeadlines.forEach(headline => headline.classList.remove('hidden'));
-      
-      allContactPoints.forEach((point, index) => {
-        point.classList.toggle('hidden', index >= 5);
-      });
-
-      updateHeadlineVisibility();
-
-      if (allContactPoints.length > 5) {
-        loadMoreButton.style.display = 'block';
-      }
+      if (initialMessage) initialMessage.style.display = 'block';
+      allCountyHeadlines.forEach(headline => headline.classList.add('hidden'));
+      allContactPoints.forEach(point => point.classList.add('hidden'));
     } else {
       allCountyHeadlines.forEach(headline => {
         headline.classList.toggle('hidden', headline.dataset.county !== countyId);
       });
-      allContactPoints.forEach(point => {
-        point.classList.toggle('hidden', point.dataset.county !== countyId);
+
+      const countyPoints = Array.from(allContactPoints).filter(p => p.dataset.county === countyId);
+      
+      allContactPoints.forEach(point => point.classList.add('hidden'));
+
+      countyPoints.forEach((point, index) => {
+        if (index < itemsPerLoad) {
+          point.classList.remove('hidden');
+        }
       });
+
+      if (countyPoints.length > itemsPerLoad) {
+        loadMoreButton.style.display = 'block';
+      }
     }
 
+    updateHeadlineVisibility();
     updateActiveFilterButton(countyId);
     updateActiveMapCounty(countyId);
   };
@@ -116,12 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
    * One button for each county and a button to show all.
    */
   const createFilterBar = () => {
-    const clearButton = document.createElement('button');
-    clearButton.textContent = 'Alle anzeigen';
-    clearButton.dataset.county = 'all';
-    clearButton.addEventListener('click', () => filterContactPoints('all'));
-    filterBar.appendChild(clearButton);
-
     for (const countyKey in allData) {
       const county = allData[countyKey];
       const button = document.createElement('button');
@@ -138,6 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const renderContactPoints = () => {
     contactList.innerHTML = '';
+
+    if (initialMessageTemplate) {
+        const initialMessageClone = initialMessageTemplate.content.cloneNode(true);
+        contactList.appendChild(initialMessageClone);
+    }
 
     for (const countyKey in allData) {
       const county = allData[countyKey];

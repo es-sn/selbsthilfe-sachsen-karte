@@ -96,6 +96,27 @@ main {
     min-height: 0;
 }
 
+#contact-list {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Vertically center the content of the list ONLY when the initial message is visible */
+#contact-list:has(.initial-message:not([style*="display: none"])) {
+    justify-content: center;
+}
+
+.initial-message {
+    text-align: center;
+}
+
+.initial-message img{
+    width: 4rem;
+    height: auto;
+    margin-bottom: 20px;
+}
+
 /* ==========================================================================
    Contact Points Column (#contact-points)
    ========================================================================== */
@@ -104,6 +125,8 @@ main {
     overflow-y: auto;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 #contact-points > p {
