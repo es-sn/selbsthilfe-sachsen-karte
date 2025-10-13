@@ -184,13 +184,13 @@ main {
     height: 100%;
 }
 
-.contact-point h4.name {
+.contact-point h4 {
     font-size: 1.1em;
     padding-bottom: 2px;
     padding-right: 40px; /* Space for copy button */
 }
 
-p.carrier {
+p.name {
     color: var(--grey-text-color);
     margin-bottom: 0.75rem;
 }
