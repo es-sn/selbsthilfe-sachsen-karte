@@ -95,7 +95,7 @@ Here is an example of a single contact point object with all possible fields:
   "social": {
     "facebook": "https://www.facebook.com/example",
     "instagram": "https://www.instagram.com/example",
-    "linkedin": "https://www.linkedin.com/in/example"
+    "linkedin": "https://www.linkedin.com/company/example"
   }
 }
 ```
