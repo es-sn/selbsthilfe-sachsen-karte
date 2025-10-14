@@ -6,7 +6,7 @@
         "id": "TDO-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
         "carrier": "Landratsamt Nordsachsen",
-        "adress": {
+        "address": {
           "street": "Richard-Wagner-Straße 7a",
           "postalCode": "04509",
           "city": "Delitzsch"
@@ -43,7 +43,7 @@
         "id": "TDO-002",
         "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen, Außenstelle Torgau",
         "carrier": "Landratsamt Nordsachsen",
-        "adress": {
+        "address": {
           "street": "Südring 17",
           "postalCode": "04860",
           "city": "Torgau"
@@ -82,7 +82,7 @@
         "id": "L-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
         "carrier": "Stadt Leipzig, Gesundheitsamt",
-        "adress": {
+        "address": {
           "street": "Gustav-Mahler-Straße 3, Hochparterre",
           "postalCode": "04109",
           "city": "Leipzig"
@@ -124,7 +124,7 @@
         "id": "L-Land-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "Diakonie Leipziger Land",
-        "adress": {
+        "address": {
           "street": "Nicolaiplatz 5",
           "postalCode": "04668",
           "city": "Grimma"
@@ -163,7 +163,7 @@
         "id": "L-Land-002",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Wurzen",
         "carrier": "Diakonie Leipziger Land",
-        "adress": {
+        "address": {
           "street": "Bahnhofsstaße 22",
           "postalCode": "04808",
           "city": "Wurzen"
@@ -200,7 +200,7 @@
         "id": "L-Land-003",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Borna",
         "carrier": "Diakonie Leipziger Land",
-        "adress": {
+        "address": {
           "street": "Leipziger Straße 79",
           "postalCode": "04552",
           "city": "Borna"
@@ -241,7 +241,7 @@
         "id": "MEI-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "Diakonisches Werk Meißen gGmbH",
-        "adress": {
+        "address": {
           "street": "Johannesstraße 9",
           "postalCode": "01662",
           "city": "Meißen"
@@ -289,7 +289,7 @@
         "id": "BZ-001",
         "name": "Selbsthilfekontaktstelle",
         "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
-        "adress": {
+        "address": {
           "street": "Schulstraße 5",
           "postalCode": "02977",
           "city": "Hoyerswerda"
@@ -327,7 +327,7 @@
         "id": "BZ-002",
         "name": "Selbsthilfekontaktstelle",
         "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
-        "adress": {
+        "address": {
           "street": "Löhrstraße 33",
           "postalCode": "02625",
           "city": "Bautzen"
@@ -370,7 +370,7 @@
         "id": "GR-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
         "carrier": "Soziales Netzwerk Lausitz gGmbH",
-        "adress": {
+        "address": {
           "street": "Albert-Schweitzer-Ring 32",
           "postalCode": "02943",
           "city": "Weißwasser"
@@ -410,7 +410,7 @@
         "id": "GR-002",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
         "carrier": "Soziales Netzwerk Lausitz gGmbH",
-        "adress": {
+        "address": {
           "street": "Schulstraße 10",
           "postalCode": "02906",
           "city": "Niesky"
@@ -449,7 +449,7 @@
         "id": "DD-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
         "carrier": "Landeshauptstadt Dresden, Amt für Gesundheit und Prävention, Abt. Gesundheitsförderung/ Prävention",
-        "adress": {
+        "address": {
           "street": "Industriestraße 21",
           "postalCode": "01129",
           "city": "Dresden"
@@ -498,7 +498,7 @@
         "id": "PIR-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
         "carrier": "Bürgerhilfe Sachsen e.V.",
-        "adress": {
+        "address": {
           "street": "Schillerstraße 35",
           "postalCode": "01796",
           "city": "Pirna"
@@ -541,7 +541,7 @@
         "id": "FG-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "Verein für betreutes Wohnen Mittweida e.V.",
-        "adress": {
+        "address": {
           "street": "Zimmerstraße 12",
           "postalCode": "09648",
           "city": "Mittweida"
@@ -584,7 +584,7 @@
         "id": "C-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "Stadtmission Chemnitz e.V.",
-        "adress": {
+        "address": {
           "street": "Rembrandtstraße 13b",
           "postalCode": "09111",
           "city": "Chemnitz"
@@ -633,7 +633,7 @@
         "id": "Z-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "Verein 'Gesundheit für alle' e.V.",
-        "adress": {
+        "address": {
           "street": "Scheffelstraße 42",
           "postalCode": "08066",
           "city": "08066"
@@ -684,7 +684,7 @@
         "id": "Z-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "ABiD Sachsen e.V.",
-        "adress": {
+        "address": {
           "street": "Scheffelstraße 3",
           "postalCode": "09496",
           "city": "Marienberg"
@@ -729,7 +729,7 @@
         "id": "V-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
         "carrier": "Landratsamt Vogtlandkreis, Gesundheitsamt",
-        "adress": {
+        "address": {
           "street": "Postplatz 5",
           "postalCode": "08523",
           "city": "Plauen"
