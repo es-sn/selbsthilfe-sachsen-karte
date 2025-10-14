@@ -133,7 +133,7 @@
           "phone": "+49 3437 701622",
           "mobil": "",
           "email": "kiss@diakonie-leipziger-land.de",
-          "web": "https://www.selbsthilfe-ehrenamt.de/"
+          "web": "https://www.selbsthilfe-ehrenamt.de"
         },
         "openingHours": {
           "text": "Montag 09:00–12:00 Uhr, Dienstag 09:00–12:00 und 13:00–17:00 Uhr",
@@ -172,7 +172,7 @@
           "phone": "+49 3425 9182762",
           "mobil": "",
           "email": "kiss@diakonie-leipziger-land.de",
-          "web": "https://www.selbsthilfe-ehrenamt.de/"
+          "web": "https://www.selbsthilfe-ehrenamt.de"
         },
         "openingHours": {
           "text": "Dienstag 09:00–12:00 und 13:00–15:00 Uhr",
@@ -209,7 +209,7 @@
           "phone": "+49 3433 274040",
           "mobil": "",
           "email": "kiss@diakonie-leipziger-land.de",
-          "web": "https://www.selbsthilfe-ehrenamt.de/"
+          "web": "https://www.selbsthilfe-ehrenamt.de"
         },
         "openingHours": {
           "text": "Donnerstag 11:00–15:00 Uhr",
@@ -250,7 +250,7 @@
           "phone": "+49 3521 72825913",
           "mobil": "",
           "email": "heike.ilc@diakonie-meissen.de",
-          "web": "https://www.diakonie-meissen.de/ich-suche-hilfe/menschen-in-notlagen/kontaktstelle-fuer-selbsthilfe/"
+          "web": "https://www.diakonie-meissen.de/ich-suche-hilfe/menschen-in-notlagen/kontaktstelle-fuer-selbsthilfe"
         },
         "openingHours": {
           "text": "Dienstag 08:00–12:00 und 13:00–15:00 Uhr, Dienstag und Donnerstag 07:00–12:00 und 13:00–15:30 Uhr; nach Vereinbarung",
@@ -277,7 +277,7 @@
         },
         "social": {
           "facebook": "https://www.facebook.com/diakonie.meissen.de",
-          "instagram": "https://www.instagram.com/diakonie.meissen.de/"
+          "instagram": "https://www.instagram.com/diakonie.meissen.de"
         }
       }
     ]
@@ -298,7 +298,7 @@
           "phone": "+49 3571 408365",
           "mobil": "",
           "email": "sks-hoyerswerda@st-martin-stattrand.de",
-          "web": "https://www.selbsthilfe-landkreis-bautzen.de/"
+          "web": "https://www.selbsthilfe-landkreis-bautzen.de"
         },
         "openingHours": {
           "text": "Dienstag 13:00–17:00 Uhr, Donnerstag 10:00–15:00 Uhr; nach Vereinbarung",
@@ -336,7 +336,7 @@
           "phone": "+49 3591 3515863",
           "mobil": "",
           "email": "sks-hoyerswerda@st-martin-stattrand.de",
-          "web": "https://www.selbsthilfe-landkreis-bautzen.de/"
+          "web": "https://www.selbsthilfe-landkreis-bautzen.de"
         },
         "openingHours": {
           "text": "Dienstag und Donnerstag 13:00–17:00 Uhr; nach Vereinbarung",
@@ -379,7 +379,7 @@
           "phone": "+49 3576 2584711",
           "mobil": "",
           "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh/"
+          "web": "https://snl.gmbh"
         },
         "openingHours": {
           "text": "Montag, Mittwoch und Freitag 09:00–16:00 Uhr",
@@ -402,8 +402,8 @@
           }
         },
         "social": {
-          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz/",
-          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz/"
+          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz",
+          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz"
         }
       },
       {
@@ -419,7 +419,7 @@
           "phone": "+49 3576 2584717",
           "mobil": "",
           "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh/"
+          "web": "https://snl.gmbh"
         },
         "openingHours": {
           "text": "",
@@ -436,8 +436,8 @@
           }
         },
         "social": {
-          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz/",
-          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz/"
+          "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz",
+          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz"
         }
       }
     ]
@@ -485,8 +485,8 @@
           }
         },
         "social": {
-          "facebook": "https://www.facebook.com/stadt.dresden#",
-          "instagram": "https://www.instagram.com/landeshauptstadt_dresden/"
+          "facebook": "https://www.facebook.com/stadt.dresden",
+          "instagram": "https://www.instagram.com/landeshauptstadt_dresden"
         }
       }
     ]
