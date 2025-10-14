@@ -21,7 +21,7 @@
         "openingHours": {
           "text": "Dienstag 09:00–11:30 und 13:00–18:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -37,7 +37,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       },
       {
@@ -59,7 +60,7 @@
         "openingHours": {
           "text": "",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [],
@@ -72,7 +73,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -100,7 +102,7 @@
         "openingHours": {
           "text": "Dienstag 09:00–12:00 und 14:00–18:00 Uhr; nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -116,7 +118,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -143,7 +146,7 @@
         "openingHours": {
           "text": "Montag 09:00–12:00 Uhr, Dienstag 09:00–12:00 und 13:00–17:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "09:00–12:00"
@@ -161,7 +164,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       },
       {
@@ -183,7 +187,7 @@
         "openingHours": {
           "text": "Dienstag 09:00–12:00 und 13:00–15:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -199,7 +203,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       },
       {
@@ -221,7 +226,7 @@
         "openingHours": {
           "text": "Donnerstag 11:00–15:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [],
@@ -236,7 +241,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -263,7 +269,7 @@
         "openingHours": {
           "text": "Dienstag 08:00–12:00 und 13:00–15:00 Uhr, Dienstag und Donnerstag 07:00–12:00 und 13:00–15:30 Uhr; nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -285,7 +291,8 @@
         },
         "social": {
           "facebook": "https://www.facebook.com/diakonie.meissen.de",
-          "instagram": "https://www.instagram.com/diakonie.meissen.de"
+          "instagram": "https://www.instagram.com/diakonie.meissen.de",
+          "linkedin": ""
         }
       }
     ]
@@ -312,7 +319,7 @@
         "openingHours": {
           "text": "Dienstag 13:00–17:00 Uhr, Donnerstag 10:00–15:00 Uhr; nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -329,7 +336,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       },
       {
@@ -351,7 +359,7 @@
         "openingHours": {
           "text": "Dienstag und Donnerstag 13:00–17:00 Uhr; nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -368,7 +376,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -395,7 +404,7 @@
         "openingHours": {
           "text": "Montag, Mittwoch und Freitag 09:00–16:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "09:00–16:00"
@@ -414,7 +423,8 @@
         },
         "social": {
           "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz",
-          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz"
+          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz",
+          "linkedin": ""
         }
       },
       {
@@ -436,7 +446,7 @@
         "openingHours": {
           "text": "",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [],
@@ -449,7 +459,8 @@
         },
         "social": {
           "facebook": "https://www.facebook.com/SozialesNetzwerkLausitz",
-          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz"
+          "instagram": "https://www.instagram.com/soziales.netzwerk.lausitz",
+          "linkedin": ""
         }
       }
     ]
@@ -476,7 +487,7 @@
         "openingHours": {
           "text": "Montag nach Vereinbarung, Dienstag 09:00–12:00 und 14:00–18:00 Uhr, Donnerstag 09:00–12:00 und 14:00–16:00 Uhr, Freitag nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "appointment"
@@ -499,7 +510,8 @@
         },
         "social": {
           "facebook": "https://www.facebook.com/stadt.dresden",
-          "instagram": "https://www.instagram.com/landeshauptstadt_dresden"
+          "instagram": "https://www.instagram.com/landeshauptstadt_dresden",
+          "linkedin": ""
         }
       }
     ]
@@ -524,7 +536,7 @@
         "openingHours": {
           "text": "Dienstag 09:00–12:00 Uhr und Donnerstag 09:00–17:00 Uhr; nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -541,7 +553,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -566,7 +579,7 @@
         "openingHours": {
           "text": "Montag 12:00–17:00 Uhr und Freitag 08:00–12:00 Uhr; nach Vereinbarung",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "12:00–17:00"
@@ -583,7 +596,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -608,7 +622,7 @@
         "openingHours": {
           "text": "Telefonisch: Dienstag 13:00–17:00 Uhr, Donnerstag 09:00–12:00 und 14:00–18:00 Uhr",
           "comment": "Persönliche Beratung nach Vereinbarung",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "appointment"
@@ -631,7 +645,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -656,7 +671,7 @@
         "openingHours": {
           "text": "Dienstag und Donnerstag 10:00–12:00 und 13:00–15:00 Uhr",
           "comment": "Nach Vereinbarung",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "appointment"
@@ -681,7 +696,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -706,7 +722,7 @@
         "openingHours": {
           "text": "Montag 08:00–15:00 Uhr, Dienstag 08:00–18:00 Uhr und Donnerstag 08:00–16:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "08:00–15:00 Uhr"
@@ -725,10 +741,11 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       },
-{
+      {
         "id": "ERZ-002",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "FV JKuSZ Aue e.V.",
@@ -745,7 +762,7 @@
         "openingHours": {
           "text": "Dienstag 10:00–18:00 Uhr, Donnerstag 10:00–16:00 Uhr",
           "comment": "",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [],
             "tue": [
@@ -762,7 +779,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]
@@ -787,7 +805,7 @@
         "openingHours": {
           "text": "Montag und Freitag 09:00–12:00 Uhr und 09:00–17:00 Uhr",
           "comment": "Nach Vereinbarung",
-          "lastUpdatet": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "appointment"
@@ -810,7 +828,8 @@
         },
         "social": {
           "facebook": "",
-          "instagram": ""
+          "instagram": "",
+          "linkedin": ""
         }
       }
     ]

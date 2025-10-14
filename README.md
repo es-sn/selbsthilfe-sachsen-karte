@@ -49,11 +49,12 @@ Each contact point is a JSON object with the following properties.
 *   `openingHours` (object): Opening hours information.
     *   `text` (string): A free-text description of the opening hours.
     *   `comment` (string): An optional comment, e.g., for appointment details.
-    *   `lastUpdated` (string): The date when the opening hours were last updated (format: YYYY-MM-DD).
+    *   `openingHoursLastUpdated` (string): The date when the opening hours were last updated (format: YYYY-MM-DD).
     *   `structured` (object): A structured representation of the opening hours. It can contain keys for each day of the week (`mon`, `tue`, etc.). Only the days with defined hours need to be included. The values are arrays of strings, which can be time ranges (e.g., "09:00-12:00") or "appointment".
 *   `social` (object): Social media links.
     *   `facebook` (string)
     *   `instagram` (string)
+    *   `linkedin` (string)
 
 ### Example
 
@@ -77,7 +78,7 @@ Here is an example of a single contact point object with all possible fields:
   "openingHours": {
     "text": "Mo & Di 09-12, Di 13-17, Mi nach Vereinbarung",
     "comment": "Persönliche Beratung nur nach Termin.",
-    "lastUpdated": "2025-10-09",
+    "openingHoursLastUpdated": "2025-10-09",
     "structured": {
       "mon": [
         "09:00-12:00"
@@ -93,7 +94,8 @@ Here is an example of a single contact point object with all possible fields:
   },
   "social": {
     "facebook": "https://www.facebook.com/example",
-    "instagram": "https://www.instagram.com/example"
+    "instagram": "https://www.instagram.com/example",
+    "linkedin": "https://www.linkedin.com/in/example"
   }
 }
 ```

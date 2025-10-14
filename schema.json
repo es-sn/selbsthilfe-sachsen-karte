@@ -63,7 +63,7 @@
                   "comment": {
                     "type": "string"
                   },
-                  "lastUpdated": {
+                  "openingHoursLastUpdated": {
                     "type": "string",
                     "format": "date"
                   },
@@ -87,6 +87,9 @@
                     "type": "string"
                   },
                   "instagram": {
+                    "type": "string"
+                  },
+                  "linkedin": {
                     "type": "string"
                   }
                 }
