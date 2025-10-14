@@ -185,9 +185,8 @@ main {
 }
 
 .contact-point h4 {
-    font-size: 1.1em;
-    padding-bottom: 2px;
-    padding-right: 40px; /* Space for copy button */
+    font-size: 1.15rem;
+    padding: 0.1rem 2rem 0.125rem 0;
 }
 
 p.name {
