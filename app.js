@@ -577,9 +577,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (copyButton) {
             copyButton.addEventListener('click', () => {
               const parts = [];
-              parts.push(`Name: ${point.name}`);
               if (point.carrier) parts.push(`Träger: ${point.carrier}`);
-              
+              parts.push(`Name: ${point.name}`);
+
               if (point.address) {
                 const addressParts = [
                     point.address.street,
@@ -591,19 +591,33 @@ document.addEventListener('DOMContentLoaded', () => {
               }
 
               if (point.contact) {
-                if (point.contact.phone) parts.push(`Telefon: ${point.contact.phone}`);
-                if (point.contact.mobile) parts.push(`Mobil: ${point.contact.mobile}`);
+                const phoneNumbers = [point.contact.phone, point.contact.mobile].flat().filter(Boolean);
+                if (phoneNumbers.length > 0) {
+                    parts.push(`Telefon: ${phoneNumbers.join(', ')}`);
+                }
                 if (point.contact.email) parts.push(`E-Mail: ${point.contact.email}`);
-                if (point.contact.web) parts.push(`Web: ${point.contact.web}`);
+                const webValue = point.contact.web || point.contact.website;
+                if (webValue) parts.push(`Web: ${webValue}`);
               }
 
-              if (point.openingHours && point.openingHours.text) {
-                parts.push(`Sprechzeiten: ${point.openingHours.text}`);
+              if (point.openingHours) {
+                if (point.openingHours.text) {
+                  parts.push(`Sprechzeiten: ${point.openingHours.text}`);
+                }
+                if (point.openingHours.comment) {
+                  parts.push(`Hinweis zu Sprechzeiten: ${point.openingHours.comment}`);
+                }
               }
 
               if (point.social) {
-                  if (point.social.facebook) parts.push(`Facebook: ${point.social.facebook}`);
-                  if (point.social.instagram) parts.push(`Instagram: ${point.social.instagram}`);
+                  const facebookValue = point.social.facebook || point.social.facebookHandle;
+                  if (facebookValue) parts.push(`Facebook: ${facebookValue}`);
+
+                  const instagramValue = point.social.instagram || point.social.instagramHandle;
+                  if (instagramValue) parts.push(`Instagram: ${instagramValue}`);
+
+                  const linkedinValue = point.social.linkedin || point.social.linkedinHandle;
+                  if (linkedinValue) parts.push(`LinkedIn: ${linkedinValue}`);
               }
 
               const textToCopy = parts.join('\n');
