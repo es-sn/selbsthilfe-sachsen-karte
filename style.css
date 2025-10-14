@@ -163,8 +163,8 @@ main {
     background-color: #fff;
     border: 2px solid var(--primary-color);
     border-radius: 8px;
-    padding: 8px 8px;
-    margin-bottom: 10px;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+    margin-bottom: 0.625rem;
 }
 
 .copy-button {
@@ -191,8 +191,11 @@ main {
 }
 
 p.name {
+    display: block;
     color: var(--grey-text-color);
-    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid #666; /* subtle divider under the name */
 }
 
 .detail-grid {
