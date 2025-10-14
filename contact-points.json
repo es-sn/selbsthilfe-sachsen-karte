@@ -681,7 +681,7 @@
     "fullName": "Erzgebirgskreis",
     "contactPoints": [
       {
-        "id": "Z-001",
+        "id": "ERZ-001",
         "name": "Kontakt- und Informationsstelle für Selbsthilfe",
         "carrier": "ABiD Sachsen e.V.",
         "address": {
@@ -693,7 +693,7 @@
           "phone": "",
           "mobil": "",
           "email": "kiss.marienberg@abidsachsen.de",
-          "web": "https://www.kiss-erz.de "
+          "web": "https://www.kiss-erz.de"
         },
         "openingHours": {
           "text": "Montag 08:00–15:00 Uhr, Dienstag 08:00–18:00 Uhr und Donnerstag 08:00–16:00 Uhr",
@@ -709,6 +709,44 @@
             "wed": [],
             "thu": [
               "08:00–16:00 Uhr"
+            ],
+            "fri": [],
+            "sat": [],
+            "sun": []
+          }
+        },
+        "social": {
+          "facebook": "",
+          "instagram": ""
+        }
+      },
+{
+        "id": "ERZ-002",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "carrier": "FV JKuSZ Aue e.V.",
+        "address": {
+          "street": "Postplatz 2",
+          "postalCode": "08280",
+          "city": "Aue-Bad-Schlema"
+        },
+        "contact": {
+          "phone": "",
+          "mobil": "",
+          "email": "kurzweg.kiss@buergerhaus-aue.de",
+          "web": "https://www.buergerhaus-aue.de/selbsthilfe-kiss"
+        },
+        "openingHours": {
+          "text": "Dienstag 10:00–18:00 Uhr, Donnerstag 10:00–16:00 Uhr",
+          "comment": "",
+          "lastUpdatet": "2025-10-14",
+          "structured": {
+            "mon": [],
+            "tue": [
+              "10:00–18:00 Uhr"
+            ],
+            "wed": [],
+            "thu": [
+              "10:00–16:00 Uhr"
             ],
             "fri": [],
             "sat": [],
