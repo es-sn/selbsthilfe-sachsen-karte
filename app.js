@@ -1,4 +1,12 @@
+const logUserTime = () => {
+  const now = new Date();
+  const time = now.toLocaleTimeString('de-DE');
+  const day = now.toLocaleDateString('de-DE', { weekday: 'long' });
+  console.log(`Aktuelle Uhrzeit: ${time}, Wochentag: ${day}`);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  logUserTime();
   const contactPointsContainer = document.getElementById('contact-points');
   const contactList = document.getElementById('contact-list');
   const template = document.getElementById('contact-point-template');
@@ -165,6 +173,87 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.removeChild(textArea);
   }
 
+  const getOpeningStatus = (structuredHours) => {
+    if (!structuredHours) {
+        return { status: 'unknown' };
+    }
+
+    const dayOrder = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const dayNames = {
+        mon: 'Mo',
+        tue: 'Di',
+        wed: 'Mi',
+        thu: 'Do',
+        fri: 'Fr',
+        sat: 'Sa',
+        sun: 'So'
+    };
+
+    let allIntervals = [];
+    let hasAppointment = false;
+
+    dayOrder.forEach((day, dayIndex) => {
+        if (structuredHours[day]) {
+            structuredHours[day].forEach(entry => {
+                if (entry === 'appointment') {
+                    hasAppointment = true;
+                } else {
+                    const times = entry.match(/(\d{2}):(\d{2})–(\d{2}):(\d{2})/);
+                    if (times) {
+                        const startMinutes = parseInt(times[1], 10) * 60 + parseInt(times[2], 10);
+                        const endMinutes = parseInt(times[3], 10) * 60 + parseInt(times[4], 10);
+                        allIntervals.push({
+                            day: day,
+                            dayIndex: dayIndex,
+                            start: startMinutes,
+                            end: endMinutes
+                        });
+                    }
+                }
+            });
+        }
+    });
+
+    if (allIntervals.length === 0) {
+        return hasAppointment ? { status: 'appointment' } : { status: 'unknown' };
+    }
+
+    allIntervals.sort((a, b) => {
+        if (a.dayIndex !== b.dayIndex) {
+            return a.dayIndex - b.dayIndex;
+        }
+        return a.start - b.start;
+    });
+
+    const now = new Date();
+    const currentDayIndex = now.getDay();
+    const currentTimeInMinutes = now.getHours() * 60 + now.getMinutes();
+
+    for (const interval of allIntervals) {
+        if (interval.dayIndex === currentDayIndex) {
+            if (currentTimeInMinutes >= interval.start && currentTimeInMinutes < interval.end) {
+                const closesAt = `${String(Math.floor(interval.end / 60)).padStart(2, '0')}:${String(interval.end % 60).padStart(2, '0')}`;
+                return { status: 'open', closesAt: closesAt };
+            }
+        }
+    }
+
+    for (const interval of allIntervals) {
+        if (interval.dayIndex > currentDayIndex || (interval.dayIndex === currentDayIndex && interval.start > currentTimeInMinutes)) {
+            const opensAt = `${String(Math.floor(interval.start / 60)).padStart(2, '0')}:${String(interval.start % 60).padStart(2, '0')}`;
+            return { status: 'closed', opensAt: opensAt, opensOn: dayNames[interval.day] };
+        }
+    }
+    
+    if (allIntervals.length > 0) {
+        const nextInterval = allIntervals[0];
+        const opensAt = `${String(Math.floor(nextInterval.start / 60)).padStart(2, '0')}:${String(nextInterval.start % 60).padStart(2, '0')}`;
+        return { status: 'closed', opensAt: opensAt, opensOn: dayNames[nextInterval.day] };
+    }
+
+    return hasAppointment ? { status: 'appointment' } : { status: 'unknown' };
+  };
+
   /**
    * Renders the entire list of contact points from the fetched data.
    * It groups contact points by county.
@@ -257,6 +346,26 @@ document.addEventListener('DOMContentLoaded', () => {
             setText('.opening-hours-value', point.openingHours.text);
           } else if (openingHoursEl) {
             openingHoursEl.style.display = 'none';
+          }
+
+          // Opening status
+          const openingStatusEl = clone.querySelector('.opening-status');
+          if (openingStatusEl) {
+              const statusInfo = getOpeningStatus(point.openingHours && point.openingHours.structured);
+              openingStatusEl.innerHTML = ''; // Clear previous content
+
+              if (statusInfo.status === 'open') {
+                  openingStatusEl.classList.add('status-open');
+                  openingStatusEl.innerHTML = `<span class="status-text-bold">Geöffnet</span> · <span class="status-text-extra">bis ${statusInfo.closesAt}</span>`;
+              } else if (statusInfo.status === 'closed') {
+                  openingStatusEl.classList.add('status-closed');
+                  openingStatusEl.innerHTML = `<span class="status-text-bold">Geschlossen</span> · <span class="status-text-extra">öffnet am ${statusInfo.opensOn} um ${statusInfo.opensAt}</span>`;
+              } else if (statusInfo.status === 'appointment') {
+                  openingStatusEl.classList.add('status-appointment');
+                  openingStatusEl.textContent = 'Nach Vereinbarung';
+              } else {
+                  openingStatusEl.style.display = 'none';
+              }
           }
 
           // Contact links are optional.

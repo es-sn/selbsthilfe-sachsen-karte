@@ -295,6 +295,36 @@ p.name {
 }
 
 /* ==========================================================================
+   Opening Status
+   ========================================================================== */
+.opening-status {
+    grid-column: span 2;
+    margin-top: 5px;
+}
+
+.status-open .status-text-bold {
+    color: #28a745; /* Green */
+}
+
+.status-closed .status-text-bold {
+    color: #dc3545; /* Red */
+}
+
+.status-appointment {
+    color: #fd7e14; /* Orange */
+    font-weight: 600;
+}
+
+.status-text-bold {
+    font-weight: 600;
+}
+
+.status-text-extra {
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* ==========================================================================
    Media Queries
    ========================================================================== */
 @media (max-width: 978px) {
