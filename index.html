@@ -33,20 +33,59 @@
         </button>
         <h4 class="carrier"></h4>
         <p class="name"></p>
-        <div class="opening-status"></div>
-        <div class="contact-grid">
-            Adresse: <span class="address"></span>
-            E-Mail: <a class="email" target="_blank"></a>
-            Telefon: <a class="phone" target="_blank"></a>
-            Mobil: <a class="mobile" target="_blank"></a>
-        </div>
-        <div class="opening-hours-grid">
-            Sprechzeiten: <span class="opening-hours-value">Keine Angaben</span>
-        </div>
-        <div class="social-links-container">
-            <div class="social-link-website"></div>
-            <div class="social-link-facebook"></div>
-            <div class="social-link-instagram"></div>
+        <div class="detail-grid">
+            <div class="address-wrapper">
+                <img src="assets/icons/Pin40x40.svg" alt="Adresse">
+                <span class="address"></span>
+            </div>
+
+            <div class="opening-hours-wrapper">
+                <img src="assets/icons/Clock40x40.svg" alt="Öffnungszeiten">
+                <div class="opening-hours-content">
+                    <div class="opening-hours-header">
+                        <div class="opening-status"></div>
+                        <img src="assets/icons/ChevronDown.svg" class="chevron-icon" alt="Toggle opening hours">
+                    </div>
+                    <div class="opening-time collapsible-content">
+                        <div class="weekly-opening-hours"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="opening-hours-comment-wrapper">
+                <img src="assets/icons/Calendar40x40.svg" alt="Kalenderhinweis">
+                <span class="opening-hours-comment"></span>
+            </div>
+
+            <div class="website-wrapper">
+                <img src="assets/icons/Globe40x40.svg" alt="Webseite">
+                <a class="website" target="_blank"></a>
+            </div>
+
+            <div class="email-wrapper">
+                <img src="assets/icons/Mail40x40.svg" alt="E-Mail">
+                <a class="email" target="_blank"></a>
+            </div>
+
+            <div class="phone-wrapper">
+                <img src="assets/icons/Phone40x40.svg" alt="Telefon">
+                <span class="phone-numbers"></span>
+            </div>
+
+            <div class="instagram-wrapper">
+                <img src="assets/icons/Instagram40x40.svg" alt="Instagram">
+                <a class="instagram" target="_blank"></a>
+            </div>
+
+            <div class="facebook-wrapper">
+                <img src="assets/icons/Facebook40x40.svg" alt="Facebook">
+                <a class="facebook" target="_blank"></a>
+            </div>
+
+            <div class="linkedin-wrapper">
+                <img src="assets/icons/Linkedin40x40.svg" alt="LinkedIn">
+                <a class="linkedin" target="_blank"></a>
+            </div>
         </div>
     </div>
 </template>

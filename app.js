@@ -1,13 +1,4 @@
-const logUserTime = () => {
-  const now = new Date();
-  const time = now.toLocaleTimeString('de-DE');
-  const day = now.toLocaleDateString('de-DE', { weekday: 'long' });
-  console.log(`Aktuelle Uhrzeit: ${time}, Wochentag: ${day}`);
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  logUserTime();
-  const contactPointsContainer = document.getElementById('contact-points');
   const contactList = document.getElementById('contact-list');
   const template = document.getElementById('contact-point-template');
   const initialMessageTemplate = document.getElementById('initial-message-template');
@@ -287,19 +278,53 @@ document.addEventListener('DOMContentLoaded', () => {
           const setLink = (selector, href, protocol = '') => {
             const link = clone.querySelector(selector);
             if (link) {
+              const wrapper = link.parentElement;
               if (href) {
-                link.href = protocol ? `${protocol}${href}` : href;
-                if (selector === '.web') {
-                  link.textContent = href.replace(/^(https?|ftp):\/\//, '').replace(/^(www\.)?/, '');
+                // Normalize website links: if selector is .web or .website and value lacks protocol, prepend https://
+                let normalized = href;
+                if ((selector === '.web' || selector === '.website') && !/^https?:\/\//i.test(String(href).trim())) {
+                  normalized = 'https://' + String(href).replace(/^\/*/, '');
+                }
+
+                link.href = protocol ? `${protocol}${href}` : normalized;
+
+                if (selector === '.web' || selector === '.website') {
+                  // show cleaned domain/path as text
+                  const shortenUrl = (url, maxLength = 40) => {
+                    let cleanUrl = url.replace(/^(https?:\/\/)/, '').replace(/^www\./, '');
+                    if (cleanUrl.length <= maxLength) {
+                        return cleanUrl;
+                    }
+                    try {
+                        const urlObject = new URL(url.startsWith('http') ? url : `https://${url}`);
+                        const domain = urlObject.hostname.replace(/^www\./, '');
+                        const path = urlObject.pathname;
+                        const availableLength = maxLength - domain.length - 1; // -1 for '/'
+                        if (availableLength > 5) { // 5 for '...' and 2 chars
+                            const half = Math.floor((availableLength - 3) / 2);
+                            const shortPath = `${path.substring(1, half + 1)}...${path.substring(path.length - half)}`;
+                            return `${domain}/${shortPath}`;
+                        }
+                    } catch (e) {
+                        // fallback for invalid URLs
+                    }
+                    const half = Math.floor((maxLength - 3) / 2);
+                    return `${cleanUrl.substring(0, half)}...${cleanUrl.substring(cleanUrl.length - half)}`;
+                  };
+                  link.textContent = shortenUrl(normalized);
                 } else {
                   link.textContent = href;
                 }
+
+                // ensure wrapper is visible
+                if (wrapper) wrapper.style.display = '';
+
+                // set common attributes
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
               } else {
-                const labelNode = link.previousSibling;
-                if (labelNode && labelNode.nodeType === Node.TEXT_NODE) {
-                    labelNode.textContent = '';
-                }
-                link.style.display = 'none';
+                // hide the whole wrapper (icon + link) when no href provided
+                if (wrapper) wrapper.style.display = 'none';
               }
             }
           };
@@ -315,91 +340,237 @@ document.addEventListener('DOMContentLoaded', () => {
             if (carrierEl) carrierEl.style.display = 'none';
           }
 
-          // Address is optional.
-          const addressEl = clone.querySelector('.address');
-          if (point.address && addressEl) {
-            const parts = [
+          // Consolidated detail-grid population: address, opening hours, links
+          const populateDetailGrid = (clone, point) => {
+            const detailGrid = clone.querySelector('.detail-grid');
+            if (!detailGrid) return;
+
+            // Address
+            const addrWrapper = clone.querySelector('.address-wrapper');
+            const addrSpan = clone.querySelector('.address');
+            if (point.address) {
+              const parts = [
                 point.address.street,
                 `${point.address.postalCode || ''} ${point.address.city || ''}`.trim()
-            ].filter(Boolean);
-            
-            if (parts.length > 0) {
-                setText('.address', parts.join(', '));
-            } else {
-                const labelNode = addressEl.previousSibling;
-                if (labelNode && labelNode.nodeType === Node.TEXT_NODE) {
-                    labelNode.textContent = '';
-                }
-                addressEl.style.display = 'none';
-            }
-          } else if (addressEl) {
-            const labelNode = addressEl.previousSibling;
-            if (labelNode && labelNode.nodeType === Node.TEXT_NODE) {
-                labelNode.textContent = '';
-            }
-            addressEl.style.display = 'none';
-          }
-
-          // Opening hours are optional.
-          const openingHoursEl = clone.querySelector('.opening-hours-grid');
-          if (point.openingHours && point.openingHours.text) {
-            setText('.opening-hours-value', point.openingHours.text);
-          } else if (openingHoursEl) {
-            openingHoursEl.style.display = 'none';
-          }
-
-          // Opening status
-          const openingStatusEl = clone.querySelector('.opening-status');
-          if (openingStatusEl) {
-              const statusInfo = getOpeningStatus(point.openingHours && point.openingHours.structured);
-              openingStatusEl.innerHTML = ''; // Clear previous content
-
-              if (statusInfo.status === 'open') {
-                  openingStatusEl.classList.add('status-open');
-                  openingStatusEl.innerHTML = `<span class="status-text-bold">Geöffnet</span> · <span class="status-text-extra">bis ${statusInfo.closesAt}</span>`;
-              } else if (statusInfo.status === 'closed') {
-                  openingStatusEl.classList.add('status-closed');
-                  openingStatusEl.innerHTML = `<span class="status-text-bold">Geschlossen</span> · <span class="status-text-extra">öffnet am ${statusInfo.opensOn} um ${statusInfo.opensAt}</span>`;
-              } else if (statusInfo.status === 'appointment') {
-                  openingStatusEl.classList.add('status-appointment');
-                  openingStatusEl.textContent = 'Nach Vereinbarung';
+              ].filter(Boolean);
+              if (parts.length > 0) {
+                if (addrSpan) addrSpan.textContent = parts.join(', ');
+                if (addrWrapper) addrWrapper.style.display = '';
               } else {
-                  openingStatusEl.style.display = 'none';
+                if (addrWrapper) addrWrapper.style.display = 'none';
               }
-          }
-
-          // Contact links are optional.
-          setLink('.phone', point.contact && point.contact.phone, 'tel:');
-          setLink('.mobile', point.contact && point.contact.mobile, 'tel:');
-          setLink('.email', point.contact && point.contact.email, 'mailto:');
-
-          // Social links are optional.
-          const webContainer = clone.querySelector('.social-link-website');
-          if (webContainer) {
-            if (point.contact && point.contact.web) {
-              webContainer.innerHTML = `<a href="${point.contact.web}" target="_blank"><img src="assets/icons/Globe48x28.svg" alt="Website"></a>`;
-            } else {
-              webContainer.style.display = 'none';
+            } else if (addrWrapper) {
+              addrWrapper.style.display = 'none';
             }
-          }
 
-          const facebookContainer = clone.querySelector('.social-link-facebook');
-          if (facebookContainer) {
-            if (point.social && point.social.facebook) {
-              facebookContainer.innerHTML = `<a href="${point.social.facebook}" target="_blank"><img src="assets/icons/Facebook48x28.svg" alt="Facebook"></a>`;
-            } else {
-              facebookContainer.style.display = 'none';
-            }
-          }
+            // Opening Hours
+            const openingHoursWrapper = clone.querySelector('.opening-hours-wrapper');
+            if (openingHoursWrapper) {
+                const header = openingHoursWrapper.querySelector('.opening-hours-header');
+                const content = openingHoursWrapper.querySelector('.collapsible-content');
+                const chevron = openingHoursWrapper.querySelector('.chevron-icon');
+                const statusEl = openingHoursWrapper.querySelector('.opening-status');
+                const weeklyHoursContainer = openingHoursWrapper.querySelector('.weekly-opening-hours');
 
-          const instagramContainer = clone.querySelector('.social-link-instagram');
-          if (instagramContainer) {
-            if (point.social && point.social.instagram) {
-              instagramContainer.innerHTML = `<a href="${point.social.instagram}" target="_blank"><img src="assets/icons/Instagram48x28.svg" alt="Instagram"></a>`;
-            } else {
-              instagramContainer.style.display = 'none';
+                const structuredHours = point.openingHours?.structured;
+                const hasText = point.openingHours?.text;
+                const hasStructured = structuredHours && Object.values(structuredHours).some(day => day.length > 0);
+
+                if (!hasText && !hasStructured) {
+                    openingHoursWrapper.style.display = 'none';
+                } else {
+                    // Populate Status
+                    if (statusEl) {
+                        const statusInfo = getOpeningStatus(point.openingHours?.structured);
+                        statusEl.innerHTML = '';
+                        statusEl.classList.remove('status-open', 'status-closed', 'status-appointment');
+                        if (statusInfo.status === 'open') {
+                            statusEl.classList.add('status-open');
+                            statusEl.innerHTML = `<span class="status-text-bold">Geöffnet</span> · <span class="status-text-extra">bis ${statusInfo.closesAt}</span>`;
+                        } else if (statusInfo.status === 'closed') {
+                            statusEl.classList.add('status-closed');
+                            statusEl.innerHTML = `<span class="status-text-bold">Geschlossen</span> · <span class="status-text-extra">öffnet am ${statusInfo.opensOn} um ${statusInfo.opensAt}</span>`;
+                        } else if (statusInfo.status === 'appointment') {
+                            statusEl.classList.add('status-appointment');
+                            statusEl.textContent = 'Nach Vereinbarung';
+                        } else {
+                             statusEl.textContent = 'Öffnungszeiten'; // Fallback text
+                        }
+                    }
+
+                    // Populate Collapsible Content with weekly grid
+                    if (weeklyHoursContainer) {
+                        const dayKeys = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+                        const dayNames = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+                        const todayIndex = new Date().getDay();
+                        let gridHtml = '';
+
+                        for (let i = 0; i < 7; i++) {
+                            const dayIndex = (todayIndex + i) % 7;
+                            const dayKey = dayKeys[dayIndex];
+                            const dayName = dayNames[dayIndex];
+                            const isToday = i === 0;
+
+                            let hoursHtml;
+                            let hoursClass = 'closed-text';
+                            if (structuredHours && structuredHours[dayKey] && structuredHours[dayKey].length > 0) {
+                                hoursHtml = structuredHours[dayKey].map(entry => {
+                                    if (entry === 'appointment') return '<div>Nach Vereinbarung</div>';
+                                    return `<div>${entry}</div>`;
+                                }).join('');
+                                hoursClass = '';
+                            } else {
+                                hoursHtml = 'Geschlossen';
+                            }
+
+                            gridHtml += `
+                                <div class="day-name ${isToday ? 'current-day' : ''}">${dayName}</div>
+                                <div class="day-times ${isToday ? 'current-day' : ''} ${hoursClass}">${hoursHtml}</div>
+                            `;
+                        }
+                        weeklyHoursContainer.innerHTML = gridHtml;
+                    }
+
+
+                    // Add click listener to header
+                    if (header && content && chevron) {
+                        // Only make it collapsible if there is content to show
+                        if (hasText || hasStructured) {
+                             header.addEventListener('click', () => {
+                                content.classList.toggle('expanded');
+                                chevron.classList.toggle('expanded');
+                            });
+                        } else {
+                            chevron.style.display = 'none';
+                            header.style.cursor = 'default';
+                        }
+                    }
+                }
             }
-          }
+
+            // Opening Hours Comment
+            const commentWrapper = clone.querySelector('.opening-hours-comment-wrapper');
+            if (commentWrapper) {
+                const commentEl = commentWrapper.querySelector('.opening-hours-comment');
+                const hasComment = point.openingHours?.comment;
+
+                if (hasComment && commentEl) {
+                    commentEl.textContent = hasComment;
+                    commentWrapper.style.display = 'flex';
+                } else {
+                    commentWrapper.style.display = 'none';
+                }
+            }
+
+            // Contact
+            const webValue = (point.contact && (point.contact.web || point.contact.website)) || null;
+            setLink('.website', webValue);
+            setLink('.email', point.contact && point.contact.email, 'mailto:');
+
+            const phoneWrapper = clone.querySelector('.phone-wrapper');
+            if (phoneWrapper) {
+                const phoneNumbersSpan = phoneWrapper.querySelector('.phone-numbers');
+                const phoneNumbers = [point.contact?.phone, point.contact?.mobile].flat().filter(Boolean);
+
+                if (phoneNumbers.length > 0 && phoneNumbersSpan) {
+                    phoneNumbersSpan.innerHTML = phoneNumbers
+                        .map(num => `<a href="tel:${num}">${num}</a>`)
+                        .join(', ');
+                    phoneWrapper.style.display = '';
+                } else {
+                    phoneWrapper.style.display = 'none';
+                }
+            }
+
+            // Social
+            const makeSocialHref = (value, platform) => {
+              if (!value) return null;
+              const bases = {
+                instagram: 'https://instagram.com/',
+                facebook: 'https://facebook.com/',
+                linkedin: 'https://www.linkedin.com/'
+              };
+
+              let v = String(value).trim();
+
+              // If it already has a protocol, use as-is.
+              if (/^https?:\/\//i.test(v)) return v;
+
+              // If it starts with 'www.' or contains the platform domain, add https:// so URL parsing works.
+              if (/^(www\.)/i.test(v) || new RegExp(`${platform}\.com`, 'i').test(v)) {
+                // ensure we don't end up duplicating scheme
+                return 'https://' + v.replace(/^\/*/, '');
+              }
+
+              // If it's a handle like @name, or a plain username, build a platform URL
+              const handle = v.replace(/^@/, '');
+              return (bases[platform] || '') + handle;
+            };
+
+            // helper to extract username from a platform URL
+            const extractUsername = (href, platform) => {
+              try {
+                const url = new URL(href);
+                const path = url.pathname.replace(/^\/+|\/+$/g, '');
+                if (!path) return null;
+                const parts = path.split('/');
+                // For Instagram posts (p/...), reels, etc. prefer the profile segment if possible
+                const first = parts[0].toLowerCase();
+                if (['p', 'tv', 'reel'].includes(first) && parts[1]) return parts[1];
+                // LinkedIn often uses /in/username or /company/slug — prefer the slug segment
+                if (platform === 'linkedin' && ['in', 'company', 'pub', 'school'].includes(first) && parts[1]) return parts[1];
+                return parts[0];
+              } catch (e) {
+                // fallback regex
+                const m = href.match(new RegExp(`${platform}\.com\/([^\/?#]+)`, 'i'));
+                return m && m[1] ? m[1] : null;
+              }
+            };
+
+            // helper to wire a social anchor inside a wrapper
+            const wireSocialAnchor = (wrapperSelector, anchorSelector, value, platform) => {
+              const wrapper = clone.querySelector(wrapperSelector);
+              if (!wrapper) return;
+
+              // Prefer the specific selector, but fall back to any anchor inside the wrapper for robustness
+              let anchor = null;
+              if (anchorSelector) anchor = wrapper.querySelector(anchorSelector);
+              if (!anchor) anchor = wrapper.querySelector('a');
+              if (!anchor) return;
+
+              if (!value) {
+                wrapper.style.display = 'none';
+                return;
+              }
+
+              const href = makeSocialHref(value, platform);
+              anchor.href = href;
+
+              // Determine display text: prefer @handle for instagram/facebook/linkedin, otherwise show cleaned path/domain
+              let displayText = '';
+              if (typeof value === 'string' && value.trim().startsWith('@')) {
+                displayText = value.trim();
+              } else if (platform === 'instagram' || platform === 'facebook' || platform === 'linkedin') {
+                const username = extractUsername(href, platform);
+                if (username) displayText = '@' + decodeURIComponent(username).replace(/\/+$/, '');
+              }
+
+              if (!displayText) {
+                displayText = href.replace(/^https?:\/\//, '').replace(/^www\./, '');
+              }
+
+              anchor.textContent = displayText;
+              anchor.target = '_blank';
+              anchor.rel = 'noopener noreferrer';
+            };
+
+            wireSocialAnchor('.instagram-wrapper', '.instagram', point.social && (point.social.instagram || point.social.instagramHandle), 'instagram');
+            wireSocialAnchor('.facebook-wrapper', '.facebook', point.social && (point.social.facebook || point.social.facebookHandle), 'facebook');
+            wireSocialAnchor('.linkedin-wrapper', '.linkedin', point.social && (point.social.linkedin || point.social.linkedinHandle), 'linkedin');
+          };
+
+          // Populate the detail grid for this contact point
+          populateDetailGrid(clone, point);
 
           // Copy button functionality
           const copyButton = clone.querySelector('.copy-button');
@@ -441,16 +612,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const icon = copyButton.querySelector('img');
                 if (!icon) return;
                 const originalIconSrc = 'assets/icons/Clipboard32x32.svg';
-                const checkIconSrc = 'assets/icons/ClipboardCheck32x32.svg';
+                icon.src = 'assets/icons/ClipboardCheck32x32.svg';
+                 copyButton.classList.add('copied');
 
-                icon.src = checkIconSrc;
-                copyButton.classList.add('copied');
-
-                setTimeout(() => {
-                  icon.src = originalIconSrc;
-                  copyButton.classList.remove('copied');
-                }, 1000);
-              };
+                 setTimeout(() => {
+                   icon.src = originalIconSrc;
+                   copyButton.classList.remove('copied');
+                 }, 1000);
+               };
 
               if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(textToCopy).then(copySuccess).catch(err => {

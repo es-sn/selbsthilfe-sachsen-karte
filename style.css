@@ -195,31 +195,88 @@ p.name {
     margin-bottom: 0.75rem;
 }
 
-.contact-grid, .opening-hours-grid {
+.detail-grid {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3px 1rem;
-
-    line-height: 1.2;
-    font-size: 0.9em;
-    margin: 0.25rem;
-    margin-bottom: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-.contact-point .contact-grid strong {
-    color: var(--primary-color);
+.detail-grid > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
 }
 
-.contact-point a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.opening-hours-comment-wrapper, .opening-hours-wrapper {
+    align-items: flex-start;
 }
 
-.contact-point a:hover,
-.contact-point a:focus {
-    color: var(--secondary-color);
-    text-decoration: underline;
+.detail-grid > div > img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.opening-hours-content {
+    width: 100%;
+}
+
+.opening-hours-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.chevron-icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.chevron-icon.expanded {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.collapsible-content.expanded {
+    max-height: 500px; /* Adjust as needed */
+}
+
+.weekly-opening-hours {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* Day and time */
+    gap: 0.5rem 1rem;
+    font-size: 0.9rem;
+    align-items: start;
+}
+
+.day-times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.weekly-opening-hours > div.current-day {
+    font-weight: bold;
+}
+
+.closed-text {
+    color: #666;
+}
+
+.opening-hours-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
 }
 
 /* Social Links */
