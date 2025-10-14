@@ -12,8 +12,9 @@
           "city": "Delitzsch"
         },
         "contact": {
-          "phone": "+49 3421 7586321",
-          "mobil": "",
+          "phone": [
+            "+49 3421 7586321"
+          ],
           "email": "kiss@lra-nordsachsen.de",
           "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
         },
@@ -49,8 +50,9 @@
           "city": "Torgau"
         },
         "contact": {
-          "phone": "+49 3421 7586357",
-          "mobil": "",
+          "phone": [
+            "+49 3421 7586357"
+          ],
           "email": "kiss@lra-nordsachsen.de",
           "web": "https://www.landkreis-nordsachsen.de/was-erledige-ich-wo/anliegen/detail/selbsthilfegruppe-finden-oder-gruenden-kontakt-und-informationsstelle-fuer-selbsthilfegruppen-nordsachsen-kiss"
         },
@@ -88,8 +90,10 @@
           "city": "Leipzig"
         },
         "contact": {
-          "phone": "+49 341 1236755",
-          "mobil": "+49 341 1236763",
+          "phone": [
+            "+49 341 1236755",
+            "+49 341 1236763"
+          ],
           "email": "selbsthilfe@leipzig.de",
           "web": "https://www.leipzig.de/selbsthilfe"
         },
@@ -130,8 +134,9 @@
           "city": "Grimma"
         },
         "contact": {
-          "phone": "+49 3437 701622",
-          "mobil": "",
+          "phone": [
+            "+49 3437 701622"
+          ],
           "email": "kiss@diakonie-leipziger-land.de",
           "web": "https://www.selbsthilfe-ehrenamt.de"
         },
@@ -169,8 +174,9 @@
           "city": "Wurzen"
         },
         "contact": {
-          "phone": "+49 3425 9182762",
-          "mobil": "",
+          "phone": [
+            "+49 3425 9182762"
+          ],
           "email": "kiss@diakonie-leipziger-land.de",
           "web": "https://www.selbsthilfe-ehrenamt.de"
         },
@@ -206,8 +212,9 @@
           "city": "Borna"
         },
         "contact": {
-          "phone": "+49 3433 274040",
-          "mobil": "",
+          "phone": [
+            "+49 3433 274040"
+          ],
           "email": "kiss@diakonie-leipziger-land.de",
           "web": "https://www.selbsthilfe-ehrenamt.de"
         },
@@ -247,8 +254,9 @@
           "city": "Meißen"
         },
         "contact": {
-          "phone": "+49 3521 72825913",
-          "mobil": "",
+          "phone": [
+            "+49 3521 72825913"
+          ],
           "email": "heike.ilc@diakonie-meissen.de",
           "web": "https://www.diakonie-meissen.de/ich-suche-hilfe/menschen-in-notlagen/kontaktstelle-fuer-selbsthilfe"
         },
@@ -295,8 +303,9 @@
           "city": "Hoyerswerda"
         },
         "contact": {
-          "phone": "+49 3571 408365",
-          "mobil": "",
+          "phone": [
+            "+49 3571 408365"
+          ],
           "email": "sks-hoyerswerda@st-martin-stattrand.de",
           "web": "https://www.selbsthilfe-landkreis-bautzen.de"
         },
@@ -333,8 +342,9 @@
           "city": "Bautzen"
         },
         "contact": {
-          "phone": "+49 3591 3515863",
-          "mobil": "",
+          "phone": [
+            "+49 3591 3515863"
+          ],
           "email": "sks-hoyerswerda@st-martin-stattrand.de",
           "web": "https://www.selbsthilfe-landkreis-bautzen.de"
         },
@@ -376,8 +386,9 @@
           "city": "Weißwasser"
         },
         "contact": {
-          "phone": "+49 3576 2584711",
-          "mobil": "",
+          "phone": [
+            "+49 3576 2584711"
+          ],
           "email": "gesundheit@snl.gmbh",
           "web": "https://snl.gmbh"
         },
@@ -416,8 +427,9 @@
           "city": "Niesky"
         },
         "contact": {
-          "phone": "+49 3576 2584717",
-          "mobil": "",
+          "phone": [
+            "+49 3576 2584717"
+          ],
           "email": "gesundheit@snl.gmbh",
           "web": "https://snl.gmbh"
         },
@@ -455,8 +467,9 @@
           "city": "Dresden"
         },
         "contact": {
-          "phone": "+49 351 4884999",
-          "mobil": "",
+          "phone": [
+            "+49 351 4884999"
+          ],
           "email": "kiss@dresden.de",
           "web": "https://www.dresden.de/de/leben/gesundheit/beratung/selbsthilfe.php?pk_campaign=Shortcut&pk_kwd=Selbsthilfe"
         },
@@ -504,8 +517,7 @@
           "city": "Pirna"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "kiss-pirna@buergerhilfe-sachsen.de",
           "web": "https://www.kiss-pirna.de"
         },
@@ -547,8 +559,7 @@
           "city": "Mittweida"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "selbsthilfe@kiss-mittelsachsen.de",
           "web": "https://www.kiss-mittelsachsen.de"
         },
@@ -590,8 +601,7 @@
           "city": "Chemnitz"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "selbsthilfe@stadtmission-chemnitz.de",
           "web": "https://www.kiss-selbsthilfe-chemnitz.de"
         },
@@ -639,8 +649,7 @@
           "city": "08066"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "kiss@selbsthilfe-zwickau.de",
           "web": "kiss@selbsthilfe-zwickau.de"
         },
@@ -690,8 +699,7 @@
           "city": "Marienberg"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "kiss.marienberg@abidsachsen.de",
           "web": "https://www.kiss-erz.de"
         },
@@ -730,8 +738,7 @@
           "city": "Aue-Bad-Schlema"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "kurzweg.kiss@buergerhaus-aue.de",
           "web": "https://www.buergerhaus-aue.de/selbsthilfe-kiss"
         },
@@ -773,8 +780,7 @@
           "city": "Plauen"
         },
         "contact": {
-          "phone": "",
-          "mobil": "",
+          "phone": [],
           "email": "kiss-pirna@buergerhilfe-sachsen.de",
           "web": "https://www.kiss-pirna.de "
         },

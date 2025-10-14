@@ -43,8 +43,7 @@ Each contact point is a JSON object with the following properties.
     *   `postalCode` (string)
     *   `city` (string)
 *   `contact` (object): Contact information.
-    *   `phone` (string)
-    *   `mobile` (string)
+    *   `phone` (array of strings): List of phone numbers.
     *   `email` (string)
     *   `web` (string)
 *   `openingHours` (object): Opening hours information.
@@ -71,8 +70,7 @@ Here is an example of a single contact point object with all possible fields:
     "city": "Musterstadt"
   },
   "contact": {
-    "phone": "+49 123 456789",
-    "mobile": "+49 987 654321",
+    "phone": ["+49 123 456789", "+49 987 654321"],
     "email": "info@example.com",
     "web": "https://www.example.com"
   },
