@@ -171,13 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const dayOrder = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
         const dayNames = {
-            mon: 'Mo',
-            tue: 'Di',
-            wed: 'Mi',
-            thu: 'Do',
-            fri: 'Fr',
-            sat: 'Sa',
-            sun: 'So'
+            mon: 'Montag',
+            tue: 'Dienstag',
+            wed: 'Mittwoch',
+            thu: 'Donnerstag',
+            fri: 'Freitag',
+            sat: 'Samstag',
+            sun: 'Sonntag'
         };
 
         let allIntervals = [];
