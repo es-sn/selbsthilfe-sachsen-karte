@@ -197,9 +197,9 @@ main {
 p.name {
     display: block;
     color: var(--grey-text-color);
-    padding-bottom: 0.8rem;
-    margin-bottom: 0.8rem;
     border-bottom: 1px solid #666; /* subtle divider under the name */
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.9rem;
 }
 
 .detail-grid {
@@ -322,7 +322,7 @@ p.name {
 
 .social-links-container a img {
     width: 100%;
-    hight: 100%;
+    height: 100%;
 }
 
 .contact-point .social a {
@@ -429,7 +429,7 @@ p.name {
     }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 979px) {
     #map-container {
         display: none;
     }
