@@ -68,9 +68,14 @@ h3 {
     margin: 0.5rem 0;
 }
 
-a:hover, a:focus {
+a{
     color: var(--secondary-color);
     text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: var(--text-color);
+    text-decoration: underline;
 }
 
 .hidden {
@@ -239,6 +244,7 @@ p.name {
 }
 
 .chevron-icon {
+    margin-top: 0.4rem;
     width: 1rem;
     height: 1rem;
     transition: transform 0.3s ease;
@@ -261,7 +267,7 @@ p.name {
 .weekly-opening-hours {
     display: grid;
     grid-template-columns: 80px 1fr; /* Day and time */
-    gap: 0.5rem 1rem;
+    gap: 0.5rem 3.5rem;
     font-size: 0.9rem;
     align-items: start;
 }
