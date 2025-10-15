@@ -367,10 +367,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const openingHoursWrapper = clone.querySelector('.opening-hours-wrapper');
             if (openingHoursWrapper) {
                 const header = openingHoursWrapper.querySelector('.opening-hours-header');
-                const content = openingHoursWrapper.querySelector('.collapsible-content');
+                const content = clone.querySelector('.collapsible-content');
                 const chevron = openingHoursWrapper.querySelector('.chevron-icon');
                 const statusEl = openingHoursWrapper.querySelector('.opening-status');
-                const weeklyHoursContainer = openingHoursWrapper.querySelector('.weekly-opening-hours');
+                const weeklyHoursContainer = clone.querySelector('.weekly-opening-hours');
 
                 const structuredHours = point.openingHours?.structured;
                 const hasText = point.openingHours?.text;
@@ -378,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (!hasText && !hasStructured) {
                     openingHoursWrapper.style.display = 'none';
+                    if (content) content.style.display = 'none';
                 } else {
                     // Populate Status
                     if (statusEl) {
