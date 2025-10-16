@@ -1,6 +1,6 @@
 {
   "TDO": {
-    "fullName": "Nordsachsen",
+    "fullName": "Landkreis Nordsachsen",
     "contactPoints": [
       {
         "id": "TDO-001",
@@ -256,7 +256,7 @@
     ]
   },
   "MEI": {
-    "fullName": "Meißen",
+    "fullName": "Landkreis Meißen",
     "contactPoints": [
       {
         "id": "MEI-001",
@@ -306,7 +306,7 @@
     ]
   },
   "BZ": {
-    "fullName": "Bautzen",
+    "fullName": "Landkreis Bautzen",
     "contactPoints": [
       {
         "id": "BZ-001",
@@ -391,7 +391,7 @@
     ]
   },
   "GR": {
-    "fullName": "Görlitz",
+    "fullName": "Landkreis Görlitz",
     "contactPoints": [
       {
         "id": "GR-001",
@@ -529,7 +529,7 @@
     ]
   },
   "PIR": {
-    "fullName": "Sächsische Schweiz-Osterzgebirge",
+    "fullName": "Landkreis Sächsische Schweiz-Osterzgebirge",
     "contactPoints": [
       {
         "id": "PIR-001",
@@ -572,7 +572,7 @@
     ]
   },
   "FG": {
-    "fullName": "Mittelsachsen",
+    "fullName": "Landkreis Mittelsachsen",
     "contactPoints": [
       {
         "id": "FG-001",
@@ -615,7 +615,7 @@
     ]
   },
   "C": {
-    "fullName": "Chemitz",
+    "fullName": "Chemnitz",
     "contactPoints": [
       {
         "id": "C-001",
@@ -664,7 +664,7 @@
     ]
   },
   "Z": {
-    "fullName": "Zwickau",
+    "fullName": "Landkreis Zwickau",
     "contactPoints": [
       {
         "id": "Z-001",
