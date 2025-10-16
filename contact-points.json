@@ -410,18 +410,22 @@
           "web": "https://snl.gmbh/thema/selbsthilfe/"
         },
         "openingHours": {
-          "text": "Montag, Mittwoch und Freitag 09:00–16:00 Uhr",
+          "text": "Montag, Mittwoch, Donnerstag und Freitag 09:00–16:00 Uhr; Nach Vereinbarung",
           "comment": "",
           "openingHoursLastUpdated": "2025-10-14",
           "structured": {
             "mon": [
               "09:00–16:00"
             ],
-            "tue": [],
+            "tue": [
+              "appointment"
+            ],
             "wed": [
               "09:00–16:00"
             ],
-            "thu": [],
+            "thu": [
+              "09:00–16:00"
+            ],
             "fri": [
               "09:00–16:00"
             ],
