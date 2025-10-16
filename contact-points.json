@@ -4,7 +4,7 @@
     "contactPoints": [
       {
         "id": "TDO-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen (KISS)",
         "carrier": "Landratsamt Nordsachsen",
         "address": {
           "street": "Richard-Wagner-Straße 7a",
@@ -43,7 +43,7 @@
       },
       {
         "id": "TDO-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen, Außenstelle Torgau",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen (KISS), Außenstelle Torgau",
         "carrier": "Landratsamt Nordsachsen",
         "address": {
           "street": "Südring 17",
@@ -84,10 +84,10 @@
     "contactPoints": [
       {
         "id": "L-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
+        "name": "Selbsthilfekontakt- und Informationsstelle (SKIS)",
         "carrier": "Stadt Leipzig, Gesundheitsamt",
         "address": {
-          "street": "Gustav-Mahler-Straße 3, Hochparterre",
+          "street": "Gustav-Mahler-Straße 3",
           "postalCode": "04109",
           "city": "Leipzig"
         },
@@ -102,24 +102,32 @@
         "openingHours": {
           "text": "Dienstag 09:00–12:00 und 14:00–18:00 Uhr; nach Vereinbarung",
           "comment": "",
-          "openingHoursLastUpdated": "2025-10-14",
+          "openingHoursLastUpdated": "2025-10-16",
           "structured": {
-            "mon": [],
+            "mon": [
+              "appointment"
+            ],
             "tue": [
               "09:00–12:00",
               "14:00–18:00"
             ],
-            "wed": [],
-            "thu": [],
-            "fri": [],
+            "wed": [
+              "appointment"
+            ],
+            "thu": [
+              "appointment"
+            ],
+            "fri": [
+              "appointment"
+            ],
             "sat": [],
             "sun": []
           }
         },
         "social": {
-          "facebook": "",
-          "instagram": "",
-          "linkedin": ""
+          "facebook": "https://www.facebook.com/Portal.Stadt.Leipzig",
+          "instagram": "https://www.instagram.com/stadtleipzig/",
+          "linkedin": "https://www.linkedin.com/company/stadt-leipzig/"
         }
       }
     ]
@@ -129,7 +137,7 @@
     "contactPoints": [
       {
         "id": "L-Land-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
         "carrier": "Diakonie Leipziger Land",
         "address": {
           "street": "Nicolaiplatz 5",
@@ -170,7 +178,7 @@
       },
       {
         "id": "L-Land-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Wurzen",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS), Außenstelle Wurzen",
         "carrier": "Diakonie Leipziger Land",
         "address": {
           "street": "Bahnhofsstaße 22",
@@ -209,7 +217,7 @@
       },
       {
         "id": "L-Land-003",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe, Außenstelle Borna",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS), Außenstelle Borna",
         "carrier": "Diakonie Leipziger Land",
         "address": {
           "street": "Leipziger Straße 79",
@@ -252,7 +260,7 @@
     "contactPoints": [
       {
         "id": "MEI-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
         "carrier": "Diakonisches Werk Meißen gGmbH",
         "address": {
           "street": "Johannesstraße 9",
@@ -302,7 +310,7 @@
     "contactPoints": [
       {
         "id": "BZ-001",
-        "name": "Selbsthilfekontaktstelle",
+        "name": "Selbsthilfekontaktstelle (SKS)",
         "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
         "address": {
           "street": "Schulstraße 5",
@@ -342,7 +350,7 @@
       },
       {
         "id": "BZ-002",
-        "name": "Selbsthilfekontaktstelle",
+        "name": "Selbsthilfekontaktstelle (SKS)",
         "carrier": "St. Martin StattRand gGmbH Jugendhilfe- und Beratungszentrum",
         "address": {
           "street": "Löhrstraße 33",
@@ -387,7 +395,7 @@
     "contactPoints": [
       {
         "id": "GR-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte (KISS)",
         "carrier": "Soziales Netzwerk Lausitz gGmbH",
         "address": {
           "street": "Albert-Schweitzer-Ring 32",
@@ -399,7 +407,7 @@
             "+49 3576 2584711"
           ],
           "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh"
+          "web": "https://snl.gmbh/thema/selbsthilfe/"
         },
         "openingHours": {
           "text": "Montag, Mittwoch und Freitag 09:00–16:00 Uhr",
@@ -429,7 +437,7 @@
       },
       {
         "id": "GR-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte (KISS)",
         "carrier": "Soziales Netzwerk Lausitz gGmbH",
         "address": {
           "street": "Schulstraße 10",
@@ -441,7 +449,7 @@
             "+49 3576 2584717"
           ],
           "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh"
+          "web": "https://snl.gmbh/thema/selbsthilfe/"
         },
         "openingHours": {
           "text": "",
@@ -470,7 +478,7 @@
     "contactPoints": [
       {
         "id": "DD-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen (KISS)",
         "carrier": "Landeshauptstadt Dresden, Amt für Gesundheit und Prävention, Abt. Gesundheitsförderung/ Prävention",
         "address": {
           "street": "Industriestraße 21",
@@ -521,7 +529,7 @@
     "contactPoints": [
       {
         "id": "PIR-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen (KISS)",
         "carrier": "Bürgerhilfe Sachsen e.V.",
         "address": {
           "street": "Schillerstraße 35",
@@ -560,7 +568,7 @@
     ]
   },
   "FG": {
-    "fullName": "Mittelsachsen",
+    "fullName": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
     "contactPoints": [
       {
         "id": "FG-001",
@@ -607,7 +615,7 @@
     "contactPoints": [
       {
         "id": "C-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
         "carrier": "Stadtmission Chemnitz e.V.",
         "address": {
           "street": "Rembrandtstraße 13b",
@@ -617,7 +625,7 @@
         "contact": {
           "phone": [],
           "email": "selbsthilfe@stadtmission-chemnitz.de",
-          "web": "https://www.kiss-selbsthilfe-chemnitz.de"
+          "web": "https://www.stadtmission-chemnitz.de/unsere-angebote/beratungsangebote/kiss"
         },
         "openingHours": {
           "text": "Telefonisch: Dienstag 13:00–17:00 Uhr, Donnerstag 09:00–12:00 und 14:00–18:00 Uhr",
@@ -656,7 +664,7 @@
     "contactPoints": [
       {
         "id": "Z-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
         "carrier": "Verein 'Gesundheit für alle' e.V.",
         "address": {
           "street": "Scheffelstraße 42",
@@ -707,7 +715,7 @@
     "contactPoints": [
       {
         "id": "ERZ-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe im Erzgebirge (KISS)",
         "carrier": "ABiD Sachsen e.V.",
         "address": {
           "street": "Scheffelstraße 3",
@@ -747,7 +755,7 @@
       },
       {
         "id": "ERZ-002",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe im Erzgebirge (KISS)",
         "carrier": "FV JKuSZ Aue e.V.",
         "address": {
           "street": "Postplatz 2",
@@ -790,7 +798,7 @@
     "contactPoints": [
       {
         "id": "V-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfegruppen (KISS)",
         "carrier": "Landratsamt Vogtlandkreis, Gesundheitsamt",
         "address": {
           "street": "Postplatz 5",
