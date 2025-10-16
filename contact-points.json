@@ -568,11 +568,11 @@
     ]
   },
   "FG": {
-    "fullName": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
+    "fullName": "Mittelsachsen",
     "contactPoints": [
       {
         "id": "FG-001",
-        "name": "Kontakt- und Informationsstelle für Selbsthilfe",
+        "name": "Kontakt- und Informationsstelle für Selbsthilfe (KISS)",
         "carrier": "Verein für betreutes Wohnen Mittweida e.V.",
         "address": {
           "street": "Zimmerstraße 12",
