@@ -810,7 +810,9 @@
           "city": "Plauen"
         },
         "contact": {
-          "phone": [03741 3003504],
+          "phone": [
+            "+03741 3003504"
+            ],
           "email": "eilenberger.kathrin@vogtlandkreis.de",
           "web": "https://www.vogtlandkreis.de/"
         },
