@@ -814,24 +814,24 @@
             "+03741 3003504"
             ],
           "email": "eilenberger.kathrin@vogtlandkreis.de",
-          "web": "https://www.vogtlandkreis.de/"
+          "web": "https://www.vogtlandkreis.de/selbsthilfe"
         },
         "openingHours": {
-          "text": "Montag und Freitag 09:00–12:00 Uhr und 09:00–17:00 Uhr",
+          "text": "Donnerstag 09:00–18:00 Uhr, sonst nach Terminvereinbarung",
           "comment": "Nach Vereinbarung",
-          "openingHoursLastUpdated": "2025-10-14",
+          "openingHoursLastUpdated": "2026-01-29",
           "structured": {
             "mon": [
               "appointment"
             ],
             "tue": [
-              "09:00–12:00 Uhr"
+              "appointment"
             ],
             "wed": [
               "appointment"
             ],
             "thu": [
-              "09:00–17:00 Uhr"
+              "09:00–18:00 Uhr"
             ],
             "fri": [
               "appointment"
