@@ -80,6 +80,17 @@
                   }
                 }
               },
+              "download": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                }
+              },
               "social": {
                 "type": "object",
                 "properties": {

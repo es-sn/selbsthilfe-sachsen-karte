@@ -342,6 +342,10 @@
             "sun": []
           }
         },
+        "download": {
+            "text": "Info-PDF herunterladen",
+            "url": "https://selbsthilfe-landkreis-bautzen.de/images/pdf-dokumente/Wegweiser%20SKS%202025.pdf"
+        },
         "social": {
           "facebook": "",
           "instagram": "",
@@ -381,6 +385,10 @@
             "sat": [],
             "sun": []
           }
+        },
+        "download": {
+          "text": "Info-PDF herunterladen",
+          "url": "https://selbsthilfe-landkreis-bautzen.de/images/pdf-dokumente/Wegweiser%20SKS%202025.pdf"
         },
         "social": {
           "facebook": "",
@@ -678,7 +686,7 @@
         "contact": {
           "phone": [
             "+49 375 4400965"
-            ],
+          ],
           "email": "kiss@selbsthilfe-zwickau.de",
           "web": "selbsthilfe-zwickau.de"
         },
@@ -814,7 +822,7 @@
         "contact": {
           "phone": [
             "+03741 3003504"
-            ],
+          ],
           "email": "eilenberger.kathrin@vogtlandkreis.de",
           "web": "https://www.vogtlandkreis.de/selbsthilfe"
         },
