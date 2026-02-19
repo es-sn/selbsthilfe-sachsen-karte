@@ -489,17 +489,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         const downloadData = point.download || null;
 
                         if (downloadWrapper && downloadAnchor) {
-                            if (downloadData) {
-                                let href = null;
-                                let label = null;
-
-                                if (typeof downloadData === 'string') {
-                                    href = downloadData;
-                                } else if (typeof downloadData === 'object') {
-                                    href = downloadData.url || null;
-                                    label = downloadData.text || downloadData.title || null;
-                                }
-
+                            if (downloadData && typeof downloadData === 'object') {
+                                let href = downloadData.url || null;
+                                let label = downloadData.text || downloadData.title || null;
                                 if (href) {
                                     let normalized = String(href).trim();
                                     if (!/^https?:\/\//i.test(normalized)) {
