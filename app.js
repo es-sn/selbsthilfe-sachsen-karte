@@ -510,7 +510,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                     if (!label) {
                                         try {
                                             const urlObj = new URL(normalized);
-                                            label = urlObj.pathname.split('/').pop() || urlObj.hostname;
+                                            const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+                                            const lastSegment = pathSegments.pop();
+                                            label = lastSegment || urlObj.hostname;
                                         } catch (e) {
                                             label = normalized.replace(/^https?:\/\//, '');
                                         }
