@@ -51,7 +51,11 @@ Each contact point is a JSON object with the following properties.
     *   `comment` (string): An optional comment, e.g., for appointment details.
     *   `openingHoursLastUpdated` (string): The date when the opening hours were last updated (format: YYYY-MM-DD).
     *   `structured` (object): A structured representation of the opening hours. It can contain keys for each day of the week (`mon`, `tue`, etc.). Only the days with defined hours need to be included. The values are arrays of strings, which can be time ranges (e.g., "09:00-12:00") or "appointment".
-*   `social` (object): Social media links.
+*   `download` (object): Optional downloadable resource (for example, an info-PDF).
+    *   `text` (string): The human-facing link text to display (e.g. "Info-PDF herunterladen").
+    *   `url` (string): The URL to the downloadable resource (absolute URL recommended). If the URL does not include a scheme, the application will assume `https://`.
+  
+* `social` (object): Social media links.
     *   `facebook` (string)
     *   `instagram` (string)
     *   `linkedin` (string)
@@ -91,6 +95,10 @@ Here is an example of a single contact point object with all possible fields:
         "appointment"
       ]
     }
+  },
+  "download": {
+    "text": "Info-PDF herunterladen",
+    "url": "https://example.org/documents/info.pdf"
   },
   "social": {
     "facebook": "https://www.facebook.com/example",
