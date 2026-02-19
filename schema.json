@@ -81,11 +81,14 @@
                 }
               },
               "download": {
-                "text": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
                 }
               },
               "social": {
