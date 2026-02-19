@@ -21,6 +21,7 @@
       }
 
       .dot {
+        display: none;
         fill: var(--secondary-color);
         pointer-events: none;
       }
