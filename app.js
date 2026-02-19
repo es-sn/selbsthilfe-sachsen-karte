@@ -483,6 +483,51 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }
 
+                        // Download PDF or similar resource
+                        const downloadWrapper = clone.querySelector('.download-wrapper');
+                        const downloadAnchor = clone.querySelector('.download');
+                        const downloadData = point.download || null;
+
+                        if (downloadWrapper && downloadAnchor) {
+                            if (downloadData) {
+                                let href = null;
+                                let label = null;
+
+                                if (typeof downloadData === 'string') {
+                                    href = downloadData;
+                                } else if (typeof downloadData === 'object') {
+                                    href = downloadData.url || null;
+                                    label = downloadData.text || downloadData.title || null;
+                                }
+
+                                if (href) {
+                                    let normalized = String(href).trim();
+                                    if (!/^https?:\/\//i.test(normalized)) {
+                                        normalized = 'https://' + normalized.replace(/^\/*/, '');
+                                    }
+                                    downloadAnchor.href = normalized;
+
+                                    if (!label) {
+                                        try {
+                                            const urlObj = new URL(normalized);
+                                            label = urlObj.pathname.split('/').pop() || urlObj.hostname;
+                                        } catch (e) {
+                                            label = normalized.replace(/^https?:\/\//, '');
+                                        }
+                                    }
+
+                                    downloadAnchor.textContent = label || 'Download';
+                                    downloadAnchor.target = '_blank';
+                                    downloadAnchor.rel = 'noopener noreferrer';
+                                    downloadWrapper.style.display = '';
+                                } else {
+                                    downloadWrapper.style.display = 'none';
+                                }
+                            } else {
+                                downloadWrapper.style.display = 'none';
+                            }
+                        }
+
                         // Social
                         const makeSocialHref = (value, platform) => {
                             if (!value) return null;
