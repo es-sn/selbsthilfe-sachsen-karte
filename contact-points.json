@@ -673,12 +673,14 @@
         "address": {
           "street": "Scheffelstraße 42",
           "postalCode": "08066",
-          "city": "08066"
+          "city": "Zwickau"
         },
         "contact": {
-          "phone": [],
+          "phone": [
+            "+49 375 4400965"
+            ],
           "email": "kiss@selbsthilfe-zwickau.de",
-          "web": "kiss@selbsthilfe-zwickau.de"
+          "web": "selbsthilfe-zwickau.de"
         },
         "openingHours": {
           "text": "Dienstag und Donnerstag 10:00–12:00 und 13:00–15:00 Uhr",
@@ -708,7 +710,7 @@
         },
         "social": {
           "facebook": "",
-          "instagram": "",
+          "instagram": "https://www.instagram.com/kiss_zwickau",
           "linkedin": ""
         }
       }
