@@ -415,7 +415,7 @@
             "+49 3576 2584711"
           ],
           "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh/thema/selbsthilfe/"
+          "web": "https://snl.gmbh/selbsthilfe-kontaktstelle-im-landkreis-goerlitz/"
         },
         "openingHours": {
           "text": "Montag, Mittwoch, Donnerstag und Freitag 09:00–16:00 Uhr; Nach Vereinbarung",
@@ -452,7 +452,7 @@
         "name": "Kontakt- und Informationsstelle für Selbsthilfe und Selbsthilfeinteressierte (KISS)",
         "carrier": "Soziales Netzwerk Lausitz gGmbH",
         "address": {
-          "street": "Schulstraße 10",
+          "street": "Bautzener Str. 23",
           "postalCode": "02906",
           "city": "Niesky"
         },
@@ -461,18 +461,28 @@
             "+49 3576 2584717"
           ],
           "email": "gesundheit@snl.gmbh",
-          "web": "https://snl.gmbh/thema/selbsthilfe/"
+          "web": "https://snl.gmbh/selbsthilfe-kontaktstelle-im-landkreis-goerlitz/"
         },
         "openingHours": {
           "text": "",
           "comment": "",
           "openingHoursLastUpdated": "2025-10-14",
           "structured": {
-            "mon": [],
-            "tue": [],
-            "wed": [],
-            "thu": [],
-            "fri": [],
+            "mon": [
+              "09:00–16:00"
+            ],
+            "tue": [
+              "appointment"
+            ],
+            "wed": [
+              "09:00–16:00"
+            ],
+            "thu": [
+              "09:00–16:00"
+            ],
+            "fri": [
+              "appointment"
+            ],
             "sat": [],
             "sun": []
           }
