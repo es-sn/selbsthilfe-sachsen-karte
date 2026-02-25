@@ -200,7 +200,7 @@
             "mon": [],
             "tue": [
               "09:00–12:00",
-              "13:00–15:00"
+                "13:00–15:00"
             ],
             "wed": [],
             "thu": [],
@@ -365,7 +365,7 @@
           "phone": [
             "+49 3591 3515863"
           ],
-          "email": "sks-hoyerswerda@st-martin-stattrand.de",
+          "email": "sks-bautzen@st-martin-stattrand.de",
           "web": "https://www.selbsthilfe-landkreis-bautzen.de"
         },
         "openingHours": {
