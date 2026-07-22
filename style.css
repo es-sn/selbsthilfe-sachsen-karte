@@ -486,21 +486,18 @@ p.name {
     }
 }
 
+@media (max-width: 979px) {
+    main { height: auto; overflow: auto; }
+    .content-wrapper { flex-direction: column; height: auto; overflow: auto; }
+}
 @media (min-width: 979px) {
-    #map-container {
-        position: sticky;
-        top: 20px;
-        align-self: flex-start;
-        height: calc(100vh - 40px);
-    }
+    #map-container { position: sticky; top: 20px; align-self: flex-start; height: calc(100vh - 40px); }
 }
 
 @media (max-width: 979px) {
-    #map-container {
-        display: none;
-    }
-
-    #contact-points {
-        height: auto;
-    }
+    #contact-points, #map-container { width: 100%; height: 50vh; }
+    #contact-points { height: auto; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .topic-item.extra-topic { display: none; }
+    #topics-overview.expanded .topic-item.extra-topic { display: block; }
 }
