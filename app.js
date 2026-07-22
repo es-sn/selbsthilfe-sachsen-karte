@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let topicsData = {};
     let activeCountyPath = null;
     let loadMoreButton = null;
+    let mapListenersBound = false;
 
     const itemsPerLoad = 5;
     const topicsVisibleWithoutExpand = 10;
@@ -799,10 +800,21 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Sets up event listeners for the SVG map once it has loaded.
      * This includes click handlers for counties to trigger filtering.
+     *
+     * NOTE: The 'load' event on the <object> can fire more than once
+     * (e.g. when the embedding context resizes/re-renders, as happens
+     * inside a resized iframe). The mapListenersBound guard ensures the
+     * click handlers below are only ever attached once — otherwise every
+     * extra 'load' firing adds duplicate listeners to every county path,
+     * so a single click would toggle the filter on and immediately back
+     * off again.
      */
     sachsenMapObject.addEventListener('load', () => {
         const svgDoc = sachsenMapObject.contentDocument;
         if (!svgDoc) return;
+
+        if (mapListenersBound) return;
+        mapListenersBound = true;
 
         svgDoc.addEventListener('mousedown', (e) => e.preventDefault());
         svgDoc.addEventListener('dragstart', (e) => e.preventDefault());
