@@ -485,15 +485,25 @@ p.name {
 @media (max-width: 979px) {
     main { height: auto; overflow: auto; }
     .content-wrapper { flex-direction: column; height: auto; overflow: auto; }
-    #contact-points, #map-container { width: 100%; }
-    #map-container { max-height: 400px; aspect-ratio: 4 / 3; }
-    #contact-points { height: auto; }
-    .topics-grid { grid-template-columns: 1fr; }
-    .topic-item.extra-topic { display: none; }
-    #topics-overview.expanded .topic-item.extra-topic { display: block; }
+    #contact-points { width: 100%; height: auto; }
+
+    #map-container {
+        display: none;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-item.extra-topic {
+        display: none;
+    }
+
+    #topics-overview.expanded .topic-item.extra-topic {
+        display: block;
+    }
 }
 
-/* Desktop always shows all topics, so the "more" button is never needed here */
 @media (min-width: 980px) {
     .topics-more-button {
         display: none !important;
@@ -507,12 +517,5 @@ p.name {
         align-self: flex-start;
         max-height: 700px;
         aspect-ratio: 4 / 3;
-    }
-}
-
-/* Karte NUR auf echten Touch-Geräten ausblenden – unabhängig von der Breite */
-@media (hover: none) and (pointer: coarse) {
-    #map-container {
-        display: none;
     }
 }
