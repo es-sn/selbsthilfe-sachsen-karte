@@ -483,33 +483,37 @@ p.name {
    Media Queries
    ========================================================================== */
 @media (max-width: 979px) {
-    main { height: auto; overflow: auto; }
-    .content-wrapper { flex-direction: column; height: auto; overflow: auto; }
-    #contact-points { width: 100%; height: auto; }
-
+    main {
+        height: auto;
+        overflow: auto;
+    }
+    .content-wrapper {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+    }
+    #contact-points {
+        width: 100%;
+        height: auto;
+    }
     #map-container {
         display: none;
     }
-
     .topics-grid {
         grid-template-columns: 1fr;
     }
-
     .topic-item.extra-topic {
         display: none;
     }
-
     #topics-overview.expanded .topic-item.extra-topic {
         display: block;
     }
 }
-
 @media (min-width: 980px) {
     .topics-more-button {
         display: none !important;
     }
 }
-
 @media (min-width: 979px) {
     #map-container {
         position: sticky;
