@@ -190,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.paddingBottom = '';
             });
         });
+    };
 
     /**
      * Creates and appends the filter buttons to the filter bar.
