@@ -1,5 +1,3 @@
-console.log('renderTopicsForCounty called with:', countyId, 'topics:', topics.length);
-
 document.addEventListener('DOMContentLoaded', () => {
     const contactList = document.getElementById('contact-list');
     const template = document.getElementById('contact-point-template');
@@ -29,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!topicsOverview || !topicsGrid || !moreButton) return;
 
         const topics = topicsData[countyId] || [];
+        console.log('renderTopicsForCounty called with:', countyId, 'topics:', topics.length);
 
         topicsOverview.classList.remove('expanded');
         topicsGrid.innerHTML = '';
