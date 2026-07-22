@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!topicsOverview || !topicsGrid || !moreButton) return;
 
         const topics = topicsData[countyId] || [];
-        console.log('renderTopicsForCounty called with:', countyId, 'topics:', topics.length);
 
         topicsOverview.classList.remove('expanded');
         topicsGrid.innerHTML = '';
@@ -146,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const allCountyHeadlines = document.querySelectorAll('#contact-points h3');
         const allContactPoints = document.querySelectorAll('.contact-point');
         const initialMessage = document.querySelector('.initial-message');
-
         if (!loadMoreButton) {
             loadMoreButton = document.createElement('button');
             loadMoreButton.textContent = 'Mehr laden';
@@ -156,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         loadMoreButton.style.display = 'none';
         if (initialMessage) initialMessage.style.display = 'none';
-
         if (countyId === 'all') {
             if (initialMessage) initialMessage.style.display = 'block';
             allCountyHeadlines.forEach(headline => headline.classList.add('hidden'));
@@ -166,27 +163,30 @@ document.addEventListener('DOMContentLoaded', () => {
             allCountyHeadlines.forEach(headline => {
                 headline.classList.toggle('hidden', headline.dataset.county !== countyId);
             });
-
             const countyPoints = Array.from(allContactPoints).filter(p => p.dataset.county === countyId);
-
             allContactPoints.forEach(point => point.classList.add('hidden'));
-
             countyPoints.forEach((point, index) => {
                 if (index < itemsPerLoad) {
                     point.classList.remove('hidden');
                 }
             });
-
             if (countyPoints.length > itemsPerLoad) {
                 loadMoreButton.style.display = 'block';
             }
-
             renderTopicsForCounty(countyId);
         }
-
         updateHeadlineVisibility();
         updateActiveFilterButton(countyId);
         updateActiveMapCounty(countyId);
+
+        // Erzwingt eine Neu-Berechnung der iframe-Höhe, da iframe-resizer
+        // Verkleinerungen nach starken Vergrößerungen manchmal nicht
+        // automatisch erkennt.
+        requestAnimationFrame(() => {
+            if (window.iFrameResizer && typeof window.iFrameResizer.resize === 'function') {
+                window.iFrameResizer.resize();
+            }
+        });
     };
 
     /**
