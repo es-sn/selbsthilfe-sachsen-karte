@@ -17,4 +17,4 @@ jobs:
         uses: docker://orrosenblatt/validate-json-action:latest
         with:
           schema: schema.json
-          jsons: contact-points.json
+          jsons: contact-points.json,topics.json

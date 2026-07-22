@@ -7,6 +7,7 @@
     <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="app.js" as="script">
     <link rel="preload" href="contact-points.json" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="topics.json" as="fetch" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,6 +25,12 @@
             </object>
         </div>
     </div>
+
+    <section id="topics-overview" class="hidden" aria-labelledby="topics-overview-heading">
+        <h2 id="topics-overview-heading">Themenübersicht</h2>
+        <div id="topics-grid" class="topics-grid"></div>
+        <button id="topics-more-button" class="topics-more-button" type="button">Mehr Themen anzeigen</button>
+    </section>
 </main>
 
 <template id="contact-point-template">

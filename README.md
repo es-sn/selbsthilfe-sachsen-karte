@@ -112,7 +112,7 @@ After adding or updating data, please create a pull request. The data will be au
 
 ## Data Validation
 
-This project uses a GitHub Action to validate the `contact-points.json` file against the `schema.json`. This ensures that all data entries have the correct format.
+This project uses a GitHub Action to validate the `contact-points.json` and `topics.json` files against the `schema.json`. This ensures that all data entries have the correct format.
 
 The badge above shows the status of the validation on the `main` branch.
 

@@ -6,10 +6,72 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBar = document.getElementById('filter-bar');
 
     let allData = {};
+    let topicsData = {};
     let activeCountyPath = null;
     let loadMoreButton = null;
 
     const itemsPerLoad = 5;
+    const topicsVisibleWithoutExpand = 10;
+
+    /**
+     * Renders the topics overview grid for the given county below the map
+     * and wires up the "Mehr Themen anzeigen" button that reveals topics
+     * beyond the 10th entry on mobile. Desktop always shows all topics via
+     * CSS media queries, so no resize listener is needed here.
+     */
+    const renderTopicsForCounty = (countyId) => {
+        const topicsOverview = document.getElementById('topics-overview');
+        const topicsGrid = document.getElementById('topics-grid');
+        const moreButton = document.getElementById('topics-more-button');
+        if (!topicsOverview || !topicsGrid || !moreButton) return;
+
+        const topics = topicsData[countyId] || [];
+
+        topicsOverview.classList.remove('expanded');
+        topicsGrid.innerHTML = '';
+
+        if (topics.length === 0) {
+            topicsOverview.classList.add('hidden');
+            return;
+        }
+
+        topicsOverview.classList.remove('hidden');
+
+        topics.forEach((topic, index) => {
+            const item = document.createElement(topic.link ? 'a' : 'div');
+            item.className = 'topic-item';
+            if (topic.link) {
+                item.href = topic.link;
+                item.target = '_blank';
+                item.rel = 'noopener noreferrer';
+            }
+            if (index >= topicsVisibleWithoutExpand) {
+                item.classList.add('extra-topic');
+            }
+            item.textContent = topic.name;
+            topicsGrid.appendChild(item);
+        });
+
+        moreButton.style.display = topics.length > topicsVisibleWithoutExpand ? '' : 'none';
+    };
+
+    const hideTopicsOverview = () => {
+        const topicsOverview = document.getElementById('topics-overview');
+        if (!topicsOverview) return;
+        topicsOverview.classList.add('hidden');
+        topicsOverview.classList.remove('expanded');
+    };
+
+    const setupTopicsMoreButton = () => {
+        const topicsOverview = document.getElementById('topics-overview');
+        const moreButton = document.getElementById('topics-more-button');
+        if (!topicsOverview || !moreButton) return;
+
+        moreButton.addEventListener('click', () => {
+            topicsOverview.classList.add('expanded');
+            moreButton.style.display = 'none';
+        });
+    };
 
     /**
      * Highlights the selected county on the SVG map.
@@ -97,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (initialMessage) initialMessage.style.display = 'block';
             allCountyHeadlines.forEach(headline => headline.classList.add('hidden'));
             allContactPoints.forEach(point => point.classList.add('hidden'));
+            hideTopicsOverview();
         } else {
             allCountyHeadlines.forEach(headline => {
                 headline.classList.toggle('hidden', headline.dataset.county !== countyId);
@@ -115,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (countyPoints.length > itemsPerLoad) {
                 loadMoreButton.style.display = 'block';
             }
+
+            renderTopicsForCounty(countyId);
         }
 
         updateHeadlineVisibility();
@@ -708,19 +773,24 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /**
-     * Fetches the contact point data from the JSON file,
+     * Fetches the contact point and topics data from the JSON files,
      * then initializes the application by rendering the data and setting up filters.
      */
-    fetch('contact-points.json')
-        .then(response => response.json())
-        .then(data => {
-            allData = data;
+    setupTopicsMoreButton();
+
+    Promise.all([
+        fetch('contact-points.json').then(response => response.json()),
+        fetch('topics.json').then(response => response.json())
+    ])
+        .then(([contactPointsData, topics]) => {
+            allData = contactPointsData;
+            topicsData = topics;
             renderContactPoints();
             createFilterBar();
             filterContactPoints('all');
             autoSelectCountyOnMobile();
         })
-        .catch(error => console.error('Error fetching contact points:', error));
+        .catch(error => console.error('Error fetching contact points or topics:', error));
 
     window.addEventListener('resize', autoSelectCountyOnMobile);
 

@@ -1,9 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Schema for contact-points.json",
+  "title": "Schema for contact-points.json and topics.json",
   "type": "object",
   "patternProperties": {
     "^[A-Z-]+$": {
+      "oneOf": [
+        { "$ref": "#/definitions/county" },
+        { "$ref": "#/definitions/topicsList" }
+      ]
+    }
+  },
+  "definitions": {
+    "county": {
       "type": "object",
       "properties": {
         "fullName": {
@@ -116,6 +124,23 @@
       "required": [
         "fullName"
       ]
+    },
+    "topicsList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
     }
   }
 }
