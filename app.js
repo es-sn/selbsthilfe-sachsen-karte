@@ -179,15 +179,17 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActiveFilterButton(countyId);
         updateActiveMapCounty(countyId);
 
-        // Erzwingt eine Neu-Berechnung der iframe-Höhe, da iframe-resizer
-        // Verkleinerungen nach starken Vergrößerungen manchmal nicht
-        // automatisch erkennt.
+        // Erzwingt eine Neu-Berechnung der iframe-Höhe: der bereits von
+        // iframe-resizer angehängte ResizeObserver auf <body> erkennt
+        // Verkleinerungen nach starken Vergrößerungen manchmal nicht von
+        // selbst. Eine minimale, sofort wieder rückgängig gemachte
+        // Größenänderung zwingt ihn zu einer echten Neumessung.
         requestAnimationFrame(() => {
-            if (window.iFrameResizer && typeof window.iFrameResizer.resize === 'function') {
-                window.iFrameResizer.resize();
-            }
+            document.body.style.paddingBottom = '1px';
+            requestAnimationFrame(() => {
+                document.body.style.paddingBottom = '';
+            });
         });
-    };
 
     /**
      * Creates and appends the filter buttons to the filter bar.
